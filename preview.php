@@ -23,7 +23,7 @@ $leaderCount     = $leaderStatement -> rowCount ();
 ?>
 
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:data="http://www.w3.org/1999/xhtml">
 <head>
     <title>AER</title>
     <meta charset="utf-8"/>
@@ -275,12 +275,14 @@ $leaderCount     = $leaderStatement -> rowCount ();
                 $count = 1;
                 while ( $row = $leaderStatement -> fetch ( PDO::FETCH_ASSOC ) ) {
                     extract ( $row );
+                    $data=$row['image'];
+                    $encodedImage = base64_encode($data);
                     ?>
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="staff">
                             <div class="img-wrap d-flex align-items-stretch">
                                 <div class="img align-self-stretch"
-                                     th:style="'background-image:url(' + @{/showimage/{id}(id=${list.id})}+ ');'">
+                                    style="background-image:url('data:image/jpg;base64,<?php echo $encodedImage; ?>');">
                                 </div>
                             </div>
                             <div class="text d-flex align-items-center pt-3 text-center">
