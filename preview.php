@@ -11,9 +11,12 @@ $db       = $database -> getConnection ();
 
 $program = new program( $db );
 $leader  = new leader( $db );
-// query products
+// query programs
 $stmt = $program -> readAll ();
 $num  = $stmt -> rowCount ();
+
+$statement=$program->readAll ();
+
 
 ?>
 
@@ -159,16 +162,17 @@ $num  = $stmt -> rowCount ();
                         while ( $row = $stmt -> fetch ( PDO::FETCH_ASSOC ) ) {
                             extract ( $row );
                             ?>
-                            <a  class="<?php if ( $count === 1 ) {
+                            <a class="<?php if ( $count === 1 ) {
                                 echo 'active';
                             } ?> nav-link px-4"
-                                id="v-pills-<?php echo $count; ?>-tab'"
-                                data-toggle="pill" href="#v-pills-<?php echo $count; ?>>"
-                                role="tab" aria-selected="true"
-                                aria-controls="v-pills-<?php echo $count; ?>"><span
-                                    class="mr-3"><!--<i class="<?php /*echo $row['title'] ;*/ ?>"
-                                                    aria-hidden="true"></i>--></span><span
-                                    text="<?php echo $row[ 'title' ]; ?>"></span></a>
+                               id="v-pills-<?php echo $count; ?>-tab'"
+                               data-toggle="pill" href="#v-pills-<?php echo $count; ?>"
+                               role="tab" aria-selected="true"
+                               aria-controls="v-pills-<?php echo $count; ?>"><span
+                                        class="mr-3">
+                                    <i class="fas fa-graduation-cap"
+                                                        aria-hidden="true"></i>
+                                </span><span><?php echo $row['title']; ?></span></a>
                             <?php
                             $count ++;
                         }
@@ -176,40 +180,36 @@ $num  = $stmt -> rowCount ();
                     ?>
                 </div>
             </div>
-            <div
-                    class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center js-fullheight">
-
+            <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center js-fullheight">
                 <div class="tab-content pl-md-5" id="v-pills-tabContent">
-
                     <?php
                     if ( $num > 0 ) {
-                    $count = 1;
-                    while ( $row = $stmt -> fetch ( PDO::FETCH_ASSOC ) ) {
-                    extract ( $row );
+                        $count = 1;
+                        while ( $row = $statement -> fetch ( PDO::FETCH_ASSOC ) ) {
+                            extract ( $row );
+                            ?>
+                            <div class="<?php if ( $count === 1 )
+                                echo 'active'; ?> tab-pane fade show  py-0"
+                                 id="v-pills-<?php echo $count; ?>" role="tabpanel"
+                                 aria-labelledby="v-pills-<?php echo $count; ?>">
+							        <span class="icon mb-3 d-block"><i
+                                        class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+                                <h2 class="mb-4">
+                                    <span><?php echo $row['title']; ?></span>
+                                </h2>
+                                <p>
+                                    <span><?php echo $row['content']; ?></span>
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
+                                </p>
+                            </div>
+                            <?php
+                            $count ++;
+                        }
+                    }
                     ?>
-                    <div
-                            class="tab-pane fade show  py-0 <?php if ( $count === 1 )
-                            echo 'active'; ?>"
-                            id="v-pills-<?php echo $count; ?>" role="tabpanel"
-                            aria-labelledby="v-pills-<?php echo $count; ?>">
-							<span class="icon mb-3 d-block"><i
-                                        class="<?php echo $row[ 'title' ]; ?>" aria-hidden="true"></i></span>
-                        <h2 class="mb-4">
-                            <span text="<?php echo $row[ 'title' ]; ?>"></span>
-                        </h2>
-                        <p>
-                            <span text="<?php echo $row[ 'content' ]; ?>"></span>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-                        </p>
-                    </div>
                 </div>
-                <?php
-                $count ++;
-                }
-                }
-                ?>
             </div>
         </div>
     </div>
