@@ -15,9 +15,11 @@ $leader  = new leader( $db );
 $stmt = $program -> readAll ();
 $num  = $stmt -> rowCount ();
 
-$statement=$program->readAll ();
+$statement = $program -> readAll ();
 
-
+//Select All Leaders
+$leaderStatement = $leader -> readAll ();
+$leaderCount     = $leaderStatement -> rowCount ();
 ?>
 
 <!DOCTYPE html>
@@ -171,8 +173,8 @@ $statement=$program->readAll ();
                                aria-controls="v-pills-<?php echo $count; ?>"><span
                                         class="mr-3">
                                     <i class="fas fa-graduation-cap"
-                                                        aria-hidden="true"></i>
-                                </span><span><?php echo $row['title']; ?></span></a>
+                                       aria-hidden="true"></i>
+                                </span><span><?php echo $row[ 'title' ]; ?></span></a>
                             <?php
                             $count ++;
                         }
@@ -193,12 +195,12 @@ $statement=$program->readAll ();
                                  id="v-pills-<?php echo $count; ?>" role="tabpanel"
                                  aria-labelledby="v-pills-<?php echo $count; ?>">
 							        <span class="icon mb-3 d-block"><i
-                                        class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+                                                class="fas fa-graduation-cap" aria-hidden="true"></i></span>
                                 <h2 class="mb-4">
-                                    <span><?php echo $row['title']; ?></span>
+                                    <span><?php echo $row[ 'title' ]; ?></span>
                                 </h2>
                                 <p>
-                                    <span><?php echo $row['content']; ?></span>
+                                    <span><?php echo $row[ 'content' ]; ?></span>
                                 </p>
                                 <p>
                                     <a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
@@ -268,25 +270,35 @@ $statement=$program->readAll ();
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-lg-3 ftco-animate"
-                 th:each="list,iStat: ${leaders}">
-                <div class="staff">
-                    <div class="img-wrap d-flex align-items-stretch">
-                        <div class="img align-self-stretch"
-                             th:style="'background-image:url(' + @{/showimage/{id}(id=${list.id})}+ ');'">
-                        </div>
-                    </div>
-                    <div class="text d-flex align-items-center pt-3 text-center">
-                        <div>
-                            <h3 class="mb-2" th:text="${list.names}"></h3>
-                            <span class="position mb-4" th:text="${list.position}"></span>
-                            <div class="faded">
-                                <a href="#" th:text="${list.email}"></a>
+            <?php
+            if ( $leaderCount > 0 ) {
+                $count = 1;
+                while ( $row = $leaderStatement -> fetch ( PDO::FETCH_ASSOC ) ) {
+                    extract ( $row );
+                    ?>
+                    <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="staff">
+                            <div class="img-wrap d-flex align-items-stretch">
+                                <div class="img align-self-stretch"
+                                     th:style="'background-image:url(' + @{/showimage/{id}(id=${list.id})}+ ');'">
+                                </div>
+                            </div>
+                            <div class="text d-flex align-items-center pt-3 text-center">
+                                <div>
+                                    <h3 class="mb-2"><?php echo $row['names']; ?></h3>
+                                    <span class="position mb-4"><?php echo $row['position']; ?></span>
+                                    <div class="faded">
+                                        <a href="#" ><?php echo $row['email']; ?></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <?php
+                    $count ++;
+                }
+            }
+            ?>
         </div>
     </div>
 </section>
