@@ -1,7 +1,7 @@
 <body class="hold-transition skin-blue fixed layout-top-nav">
 <div class="wrapper">
     <?php
-    require_once 'config/db.php';
+    require_once 'config/database.php';
 
     echo "<div class='maincontainer'>";
     include 'common/header.php';

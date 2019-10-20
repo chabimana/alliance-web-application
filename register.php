@@ -2,7 +2,7 @@
 	<div class="wrapper">
 
 <?php
-require_once 'config/db.php';
+require_once 'config/database.php';
 // Header
 include 'common/header.php';
 

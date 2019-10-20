@@ -2,7 +2,7 @@
 <?php
 
 // Core Initialization
-require_once 'config/db.php';
+require_once 'config/database.php';
 
 echo "<div class='maincontainer'>";
 
