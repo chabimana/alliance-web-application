@@ -26,7 +26,7 @@ if (Input::exists()) {
 
       if ($login) {
         //echo "logado!";
-        Redirect::to('admin.php');
+        Redirect::to('login.php');
       } else {
         echo "<p class='label label-danger'>Sorry, logging in failed.</p><br><br>";
       }
