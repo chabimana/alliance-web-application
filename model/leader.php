@@ -13,8 +13,6 @@ class leader
 
     public $image;
 
-    public $photo;
-
     public $names;
 
     public function __construct ( $db )
@@ -116,6 +114,34 @@ class leader
     public function setNames ( $names ): void
     {
         $this -> names = $names;
+    }
+    function addleaders(){
+        //write query
+        $query = "INSERT INTO
+                    " . $this->table_name . "
+                SET
+                    image=:image,position=:position,email=:email,names=:names";
+
+        $stmt = $this->conn->prepare($query);
+
+        // posted values
+        $this->image=$this->image;
+        $this->position=htmlspecialchars(strip_tags($this->position));
+        $this->email = htmlspecialchars(strip_tags($this->email));
+        $this->names = htmlspecialchars(strip_tags($this->names));
+
+
+        // bind values
+        $stmt->bindParam(":image", $this->image,PDO::PARAM_LOB);
+        $stmt->bindParam(":position", $this->position);
+        $stmt->bindParam(":email", $this->email);
+        $stmt->bindParam(":names", $this->names);
+
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
