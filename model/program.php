@@ -11,6 +11,7 @@ class program
     public $id;
     public $title;
     public $content;
+    public $iconsid;
 
     public function __construct ( $db )
     {
@@ -40,20 +41,19 @@ class program
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    title=:title, content=:content";
+                    content=:content,title=:title,iconsid=:iconsid";
 
         $stmt = $this->conn->prepare($query);
 
         // posted values
         $this->title=htmlspecialchars(strip_tags($this->title));
         $this->content=htmlspecialchars(strip_tags($this->content));
-
-        // to get time-stamp for 'created' field
-        $this->timestamp = date('Y-m-d H:i:s');
+        $this->iconsid = htmlspecialchars(strip_tags($this->iconsid));
 
         // bind values
         $stmt->bindParam(":title", $this->title);
         $stmt->bindParam(":content", $this->content);
+        $stmt->bindParam(":iconsid", $this->iconsid);
 
         if($stmt->execute()){
             return true;
