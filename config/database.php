@@ -5,7 +5,7 @@ class Database{
     private $host = "localhost";
     private $db_name = "alliance";
     private $username = "root";
-    private $password = "admin";
+    private $password = "";
     public $conn;
 
     // get the database connection
