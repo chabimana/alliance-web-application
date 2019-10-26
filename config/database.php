@@ -5,8 +5,9 @@ class Database{
     private $host = "localhost";
     private $db_name = "alliance";
     private $username = "root";
-    private $password = "";
+    private $password = "admin";
     public $conn;
+
 
     // get the database connection
     public function getConnection(){
@@ -21,4 +22,6 @@ class Database{
 
         return $this->conn;
     }
+
+
 }

@@ -159,12 +159,12 @@ $leaderCount     = $leaderStatement -> rowCount ();
                 <div class="nav flex-column nav-pills" id="v-pills-tab"
                      role="tablist" aria-orientation="vertical">
                     <?php
-                    if ( $num > 0 ) {
+                    if ($num > 0) {
                         $count = 1;
                         while ( $row = $stmt -> fetch ( PDO::FETCH_ASSOC ) ) {
                             extract ( $row );
                             ?>
-                            <a class="<?php if ( $count === 1 ) {
+                            <a class="<?php if ($count === 1) {
                                 echo 'active';
                             } ?> nav-link px-4"
                                id="v-pills-<?php echo $count; ?>-tab'"
@@ -185,12 +185,12 @@ $leaderCount     = $leaderStatement -> rowCount ();
             <div class="col-md-8 ftco-animate p-4 p-md-5 d-flex align-items-center js-fullheight">
                 <div class="tab-content pl-md-5" id="v-pills-tabContent">
                     <?php
-                    if ( $num > 0 ) {
+                    if ($num > 0) {
                         $count = 1;
                         while ( $row = $statement -> fetch ( PDO::FETCH_ASSOC ) ) {
                             extract ( $row );
                             ?>
-                            <div class="<?php if ( $count === 1 )
+                            <div class="<?php if ($count === 1)
                                 echo 'active'; ?> tab-pane fade show  py-0"
                                  id="v-pills-<?php echo $count; ?>" role="tabpanel"
                                  aria-labelledby="v-pills-<?php echo $count; ?>">
@@ -271,26 +271,26 @@ $leaderCount     = $leaderStatement -> rowCount ();
         </div>
         <div class="row">
             <?php
-            if ( $leaderCount > 0 ) {
+            if ($leaderCount > 0) {
                 $count = 1;
                 while ( $row = $leaderStatement -> fetch ( PDO::FETCH_ASSOC ) ) {
                     extract ( $row );
-                    $data=$row['image'];
-                    $encodedImage = base64_encode($data);
+                    $data         = $row[ 'image' ];
+                    $encodedImage = base64_encode ( $data );
                     ?>
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="staff">
                             <div class="img-wrap d-flex align-items-stretch">
                                 <div class="img align-self-stretch"
-                                    style="background-image:url('data:image/jpg;base64,<?php echo $encodedImage; ?>');">
+                                     style="background-image:url('data:image/jpg;base64,<?php echo $encodedImage; ?>');">
                                 </div>
                             </div>
                             <div class="text d-flex align-items-center pt-3 text-center">
                                 <div>
-                                    <h3 class="mb-2"><?php echo $row['names']; ?></h3>
-                                    <span class="position mb-4"><?php echo $row['position']; ?></span>
+                                    <h3 class="mb-2"><?php echo $row[ 'names' ]; ?></h3>
+                                    <span class="position mb-4"><?php echo $row[ 'position' ]; ?></span>
                                     <div class="faded">
-                                        <a href="#" ><?php echo $row['email']; ?></a>
+                                        <a href="#"><?php echo $row[ 'email' ]; ?></a>
                                     </div>
                                 </div>
                             </div>

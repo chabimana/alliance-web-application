@@ -1,6 +1,6 @@
 /*!
  * Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com
- * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * License - https://fontawesome.com/license/free (icon: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 (function () {
   'use strict';
@@ -3588,7 +3588,7 @@
 
   function MissingIcon(error) {
     this.name = 'MissingIcon';
-    this.message = error || 'Icon unavailable';
+    this.message = error || 'icon unavailable';
     this.stack = new Error().stack;
   }
   MissingIcon.prototype = Object.create(Error.prototype);
@@ -3735,7 +3735,7 @@
       }
 
       if (iconName && prefix && !config.showMissingIcons) {
-        reject(new MissingIcon("Icon is missing for prefix ".concat(prefix, " with icon name ").concat(iconName)));
+        reject(new MissingIcon("icon is missing for prefix ".concat(prefix, " with icon name ").concat(iconName)));
       } else {
         resolve(val);
       }

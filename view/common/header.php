@@ -8,22 +8,22 @@
     <meta
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         name="viewport"/>
-    <link rel="stylesheet" href="static/old/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="view/static/old/css/bootstrap.min.css"/>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="static/old/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" href="view/static/old/css/font-awesome.min.css"/>
     <!-- Ionicons -->
-    <link rel="stylesheet" href="static/old/css/ionicons.min.css}"/>
+    <link rel="stylesheet" href="view/static/old/css/ionicons.min.css"/>
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="static/old/css/AdminLTE.min.css}"/>
+    <link rel="stylesheet" href="view/static/old/css/AdminLTE.min.css"/>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
     <link rel="stylesheet"
-          href="static/old/css/dataTables.bootstrap.min.css}"/>
+          href="view/static/old/css/dataTables.bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="static/old/css/skin-blue.min.css}"/>
+    <link rel="stylesheet" href="view/static/old/css/skin-blue.min.css"/>
 
 
     <!-- Google Font -->
@@ -81,11 +81,11 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <div th:fragment="body-bottom-scripts">
-    <script th:src="static/old/js/jquery.min.js}"></script>
-    <script th:src="static/old/js/bootstrap.min.js}"></script>
-    <script th:src="static/old/js/jquery.dataTables.min.js}"></script>
-    <script th:src="static/old/js/dataTables.bootstrap.min.js}"></script>
-    <script th:src="static/old/js/adminlte.min.js}"></script>
+    <script src="view/static/old/js/jquery.min.js"></script>
+    <script src="view/static/old/js/bootstrap.min.js"></script>
+    <script src="view/static/old/js/jquery.dataTables.min.js"></script>
+    <script src="view/static/old/js/dataTables.bootstrap.min.js"></script>
+    <script src="view/static/old/js/adminlte.min.js"></script>
 </div>
 </body>
 </html>

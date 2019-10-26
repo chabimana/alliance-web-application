@@ -1,5 +1,5 @@
 <?php
-class Icons{
+class icon{
  
     
     private $conn;
