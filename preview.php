@@ -3,8 +3,8 @@ $page_title = "Preview Programs";
 
 // include database and object files
 include_once 'config/database.php';
-include_once 'model/program.php';
-include_once 'model/leader.php';
+include_once 'model/Program.php';
+include_once 'model/Leader.php';
 
 $database = new Database();
 $db       = $database -> getConnection ();

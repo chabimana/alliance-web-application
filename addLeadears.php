@@ -3,7 +3,7 @@
 <?php
 // include database and model files
 include_once 'config/database.php';
-include_once 'model/leader.php';
+include_once 'model/Leader.php';
 // get database connection
 $database = new Database();
 $db = $database->getConnection();

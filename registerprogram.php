@@ -3,8 +3,8 @@
 <?php
 // include database and model files
 include_once 'config/database.php';
-include_once 'model/program.php';
-include_once 'model/icon.php';
+include_once 'model/Program.php';
+include_once 'model/Icon.php';
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
