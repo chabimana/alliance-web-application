@@ -36,7 +36,7 @@
                 echo $page_title == "Leaders" ? "class='active'" : ""; ?> >
                     <a href="<?php echo $home_url; ?>admin/leaders.php">Leaders</a>
                 </li>
-            </ul>git
+            </ul>
 
             <!-- options in the upper right corner of the page -->
             <ul class="nav navbar-nav navbar-right">

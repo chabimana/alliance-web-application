@@ -15,7 +15,6 @@ echo "<div class='col-md-12'>";
 
 // get parameter values, and to prevent undefined index notice
 $action = isset( $_GET[ 'action' ] ) ? $_GET[ 'action' ] : "";
-
 // tell the user he's already logged in
 if ( $action == 'already_logged_in' ) {
     echo "<div class='alert alert-info'>";
