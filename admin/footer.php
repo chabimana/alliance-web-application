@@ -1,12 +1,10 @@
+
+<div>
+    <script src="../view/static/js/jquery.min.js"></script>
+    <script src="../view/static/js/bootstrap.min.js"></script>
+    <script src="../view/static/js/jquery.dataTables.min.js"></script>
+    <script src="../view/static/js/dataTables.bootstrap.min.js"></script>
+    <script src="../view/static/js/adminlte.min.js"></script>
 </div>
-<!-- /container -->
-
-<!-- jQuery library -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-<!-- Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- end the HTML page -->
 </body>
 </html>

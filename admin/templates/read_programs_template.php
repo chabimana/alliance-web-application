@@ -2,15 +2,14 @@
 // display the table if the number of users retrieved was greater than zero
 if ( $num > 0 ) {
     echo "<table id='leaders' class='table table-bordered table-hover'>";
+
     // table headers
     echo "<thead>";
     echo "<tr>";
     echo "<th>#</th>";
-    echo "<th>Firstname</th>";
-    echo "<th>Lastname</th>";
-    echo "<th>Email</th>";
-    echo "<th>Contact Number</th>";
-    echo "<th>Access Level</th>";
+    echo "<th>Title</th>";
+    echo "<th>Content</th>";
+    echo "<th>Icon</th>";
     echo "<th>Actions</th>";
     echo "</tr>";
     echo "</thead>";
@@ -22,20 +21,19 @@ if ( $num > 0 ) {
         echo "<tbody>";
         echo "<tr>";
         echo "<td>$count</td>";
-        echo "<td>{$firstname}</td>";
-        echo "<td>{$lastname}</td>";
-        echo "<td>{$email}</td>";
-        echo "<td>{$contact_number}</td>";
-        echo "<td>{$access_level}</td>";
-        echo "<td><a href=''>Edit</a></td>";
+        echo "<td width='10%'>{$title}</td>";
+        echo "<td width='70%'>{$content}</td>";
+        echo "<td width='10%'></td>";
+        echo "<td width='10%'><a href=''>Edit</a></td>";
         echo "</tr>";
         echo "</tbody>";
         $count = $count + 1;
     }
     echo "</table>";
+    echo "<div class='row'></div>";
 
-    $page_url   = "read_users.php?";
-    $total_rows = $user -> countAll ();
+    $page_url   = "read_programs.php?";
+    $total_rows = $program -> countAll ();
 
 } // tell the user there are no selfies
 else {
@@ -44,7 +42,4 @@ else {
     </div>";
 }
 ?>
-<div class="col-md-12">
-    <a href="<?php echo $home_url; ?>admin/user_registration.php" class="btn btn-success">Register New user</a>
-</div>
 

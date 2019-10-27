@@ -20,7 +20,7 @@ $user = new User( $db );
 $page_title = "Users";
 
 // include page header HTML
-include_once "layout_head.php";
+include_once "header.php";
 
 echo "<div class='col-md-12'>";
 
@@ -39,5 +39,21 @@ include_once "templates/read_users_template.php";
 echo "</div>";
 
 // include page footer HTML
-include_once "layout_foot.php";
+include_once "footer.php";
 ?>
+<script>
+    $(document).ready(function () {
+        $('#leaders').DataTable({
+            select: {
+                style: 'multi'
+            },
+            'paging': true,
+            'lengthChange': false,
+            'searching': true,
+            'ordering': false,
+            'info': true,
+            'autoWidth': false,
+            'pageLength': 2,
+        })
+    });
+</script>

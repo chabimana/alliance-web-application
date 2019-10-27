@@ -19,6 +19,7 @@ class leader
     {
         $this -> conn = $db;
     }
+
     // select all leaders
     function readAll ()
     {
@@ -115,33 +116,54 @@ class leader
     {
         $this -> names = $names;
     }
-    function addleaders(){
+
+    function addleaders ()
+    {
         //write query
         $query = "INSERT INTO
-                    " . $this->table_name . "
+                    " . $this -> table_name . "
                 SET
                     image=:image,position=:position,email=:email,names=:names";
 
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this -> conn -> prepare ( $query );
 
         // posted values
-        $this->image=$this->image;
-        $this->position=htmlspecialchars(strip_tags($this->position));
-        $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->names = htmlspecialchars(strip_tags($this->names));
+        $this -> image    = $this -> image;
+        $this -> position = htmlspecialchars ( strip_tags ( $this -> position ) );
+        $this -> email    = htmlspecialchars ( strip_tags ( $this -> email ) );
+        $this -> names    = htmlspecialchars ( strip_tags ( $this -> names ) );
 
 
         // bind values
-        $stmt->bindParam(":image", $this->image,PDO::PARAM_LOB);
-        $stmt->bindParam(":position", $this->position);
-        $stmt->bindParam(":email", $this->email);
-        $stmt->bindParam(":names", $this->names);
+        $stmt -> bindParam ( ":image" , $this -> image , PDO::PARAM_LOB );
+        $stmt -> bindParam ( ":position" , $this -> position );
+        $stmt -> bindParam ( ":email" , $this -> email );
+        $stmt -> bindParam ( ":names" , $this -> names );
 
-        if($stmt->execute()){
+        if ( $stmt -> execute () ) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
+// used for paging users
+    public function countAll ()
+    {
+
+        // query to select all user records
+        $query = "SELECT id FROM " . $this -> table_name . "";
+
+        // prepare query statement
+        $stmt = $this -> conn -> prepare ( $query );
+
+        // execute query
+        $stmt -> execute ();
+
+        // get number of rows
+        $num = $stmt -> rowCount ();
+
+        // return row count
+        return $num;
+    }
 }

@@ -28,12 +28,12 @@
                 </li>
                 <!-- highlight for order related pages -->
                 <li <?php
-                echo $page_title == "Users" ? "class='active'" : ""; ?> >
+                echo $page_title == "Programs" ? "class='active'" : ""; ?> >
                     <a href="<?php echo $home_url; ?>admin/programs.php">Programs</a>
                 </li>
                 <!-- highlight for order related pages -->
-                <li<?php
-                echo $page_title == "Users" ? "class='active'" : ""; ?> >
+                <li <?php
+                echo $page_title == "Leaders" ? "class='active'" : ""; ?> >
                     <a href="<?php echo $home_url; ?>admin/leaders.php">Leaders</a>
                 </li>
             </ul>
