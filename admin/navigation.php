@@ -36,7 +36,7 @@
                 echo $page_title == "Leaders" ? "class='active'" : ""; ?> >
                     <a href="<?php echo $home_url; ?>admin/leaders.php">Leaders</a>
                 </li>
-            </ul>
+            </ul>git
 
             <!-- options in the upper right corner of the page -->
             <ul class="nav navbar-nav navbar-right">
@@ -48,7 +48,7 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <!-- log out user -->
-                        <li><a href="<?php echo $home_url; ?>logout.php">Logout</a></li>
+                        <li><a href="<?php echo $home_url; ?>logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
