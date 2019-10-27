@@ -45,7 +45,7 @@ else {
 }
 ?>
 <div class="col-md-12">
-    <a href="<?php echo $home_url; ?>admin/user_registration.php" class="btn btn-primary"><span
+    <a href="<?php echo $home_url; ?>admin/user_registration" class="btn btn-primary"><span
                 class="glyphicon glyphicon-plus">Register User</a>
 </div>
 
