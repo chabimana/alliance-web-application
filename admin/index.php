@@ -27,7 +27,6 @@ if ( $action == 'already_logged_in' ) {
         echo "</div>";
     }
 }
-
 echo "<div class='alert alert-info'>";
 echo "Contents of your admin section will be here.";
 echo "</div>";
