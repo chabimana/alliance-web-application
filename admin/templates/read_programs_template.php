@@ -42,4 +42,8 @@ else {
     </div>";
 }
 ?>
+<div class="col-md-12">
+    <a href="<?php echo $home_url; ?>admin/program_registration.php" class="btn btn-primary"><span
+            class="glyphicon glyphicon-plus">Add Program</a>
+</div>
 

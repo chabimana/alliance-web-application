@@ -35,7 +35,7 @@ if ( $_POST ) {
     // check if email already exists
     if ( $user -> emailExists () ) {
         echo "<div class='alert alert-danger'>";
-        echo "The email you specified is already registered. Please try again or <a href='{$home_url}login'>login.</a>";
+        echo "The email you specified is already registered. Please provide a different Email";
         echo "</div>";
     } else {
         // set values to object properties
@@ -44,26 +44,43 @@ if ( $_POST ) {
         $user -> contact_number = $_POST[ 'contact_number' ];
         $user -> address        = $_POST[ 'address' ];
         $user -> password       = $_POST[ 'password' ];
-        $user -> access_level   = 'Customer';
-        $user -> status         = 1;
+        $user -> access_level   = 'Admin';
+        $user -> status         = 0;
+        // access code for email verification
+        $access_code=$utils->getToken();
+        $user->access_code=$access_code;
 
         // create the user
-        if ( $user -> create () ) {
+        if($user->create()){
+            // send confimation email
+            $send_to_email=$_POST['email'];
+            $body="Hi {$send_to_email}.<br /><br />";
+            $body.="Please click the following link to verify your email and login: {$home_url}verify/?access_code={$access_code}";
+            $subject="Verification Email";
 
-            echo "<div class='alert alert-info'>";
-            echo "Successfully registered. <a href='{$home_url}login'>Please login</a>.";
-            echo "</div>";
+            if($utils->sendEmailViaPhpMail($send_to_email, $subject, $body)){
+                echo "<div class='alert alert-success'>
+            Verification link was sent to your email. Click that link to login.
+        </div>";
+            }
+
+            else{
+                echo "<div class='alert alert-danger'>
+            User was created but unable to send verification email. Please contact admin.
+        </div>";
+            }
 
             // empty posted values
-            $_POST = array ();
+            $_POST=array();
 
-        } else {
+        }else{
             echo "<div class='alert alert-danger' role='alert'>Unable to register. Please try again.</div>";
         }
     }
+
 }
 ?>
-    <form action='register.php' method='post' id='register'>
+    <form action='user_registration.php' method='post' id='register'>
 
         <table class='table table-responsive'>
 
@@ -111,7 +128,7 @@ if ( $_POST ) {
                 <td></td>
                 <td>
                     <button type="submit" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-plus"></span> Register
+                        <span class="glyphicon glyphicon-plus"></span> Register A New User
                     </button>
                 </td>
             </tr>

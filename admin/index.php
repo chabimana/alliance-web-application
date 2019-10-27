@@ -6,7 +6,7 @@ include_once "../config/core.php";
 include_once "login_checker.php";
 
 // set page title
-$page_title = "Admin Index";
+$page_title = "Admin Homepage";
 
 // include page header HTML
 include 'header.php';

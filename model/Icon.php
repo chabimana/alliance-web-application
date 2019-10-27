@@ -2,8 +2,6 @@
 
 class icon
 {
-
-
     public $id;
     public $name;
     public $icon_desc;
@@ -16,7 +14,7 @@ class icon
     }
 
     // used by select drop-down list
-    function read ()
+    function readAll ()
     {
         //select all data
         $query = "SELECT
@@ -32,5 +30,4 @@ class icon
         return $stmt;
     }
 }
-
 ?>

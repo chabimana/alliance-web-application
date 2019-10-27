@@ -1,5 +1,5 @@
 <!-- navbar -->
-<div class="navbar navbar-default navbar-static-top" role="navigation">
+<div class="navbar navbar-expand-lg navbar-light bg-info" role="navigation">
     <div class="container-fluid">
 
         <div class="navbar-header">
@@ -18,7 +18,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <!-- highlight for order related pages -->
-                <li <?php echo $page_title == "Admin Index" ? "class='active'" : ""; ?>>
+                <li <?php echo $page_title == "Admin Homepage" ? "class='active'" : ""; ?>>
                     <a href="<?php echo $home_url; ?>admin/index.php">Home</a>
                 </li>
                 <!-- highlight for user related pages -->

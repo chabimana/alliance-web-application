@@ -20,12 +20,9 @@ include 'common/header.php';
 <?php
 // if the form was submitted
 if($_POST){
-
-
     $program->title = $_POST['title'];
     $program->content = $_POST['content'];
     $program->iconsid = $_POST['iconsid'];
-
 
     if($program->createProgram()){
         echo "<div class='alert alert-success'>program created successful.</div>";
