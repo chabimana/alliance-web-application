@@ -18,8 +18,22 @@ include 'common/header.php';
 
 ?>
 <?php
+$titleError ="";
+$iconError ="";
+$contentError ="";
 // if the form was submitted
 if($_POST){
+     if (empty($_POST["title"])) {
+$titleError = "Tile is required";
+} else {
+ $program->title =$_POST["title"];
+if (!preg_match("/^[a-zA-Z ]*$/",$program->title)) {
+$titleError = "Only letters and white space allowed";
+}
+}
+ if (empty($_POST["content"])) {
+$contentError = "Content is required";
+}else{
     $program->title = $_POST['title'];
     $program->content = $_POST['content'];
     $program->iconsid = $_POST['iconsid'];
@@ -31,6 +45,7 @@ if($_POST){
     else{
         echo "<div class='alert alert-danger'>Unable to create program.</div>";
     }
+}
 }
 ?>
 
@@ -61,6 +76,7 @@ if($_POST){
                             <div class="form-group">
                                 <input type="text" class="form-control"
                                     placeholder="Enter Title" name="title" />
+                                    <span class="error text-danger">*<?php echo $titleError;?></span>
                             </div>
                             <div class="form-group">
                                 <label for="hospitalname" class="col-sm-2 control-label">Icons
@@ -78,6 +94,7 @@ if($_POST){
                             </div>
                             <textarea class="textarea" placeholder="enter content" name="content"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                <span class="error text-danger">*<?php echo $contentError;?></span>
                             <div class="form-group">
                                 <input type="submit" value="Save"
                                     class="btn btn-primary py-3 px-5" />

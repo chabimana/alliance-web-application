@@ -65,7 +65,7 @@ if ( $_POST ) {
             </tr>
 
             <tr>
-                <td>Icon Name Selection</td>
+                <td>Icon Name Selection</td> 
                 <td><?php
                     $stmt = $icon -> readAll ();
                     echo "<select class='form-control' name='iconId'>";
