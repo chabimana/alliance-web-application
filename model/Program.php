@@ -36,30 +36,32 @@ class program
     }
 
     // create program
-    function createProgram(){
+    function createProgram ()
+    {
         //write query
         $query = "INSERT INTO
-                    " . $this->table_name . "
+                    " . $this -> table_name . "
                 SET
-                    content=:content,title=:title,iconsid=:iconsid";
+                    content=:content,title=:title, iconsid=:iconsid";
 
-        $stmt = $this->conn->prepare($query);
+
+        $stmt = $this -> conn -> prepare ( $query );
 
         // posted values
-        $this->title=htmlspecialchars(strip_tags($this->title));
-        $this->content=htmlspecialchars(strip_tags($this->content));
-        $this->iconsid = htmlspecialchars(strip_tags($this->iconsid));
+        $this -> title   = htmlspecialchars ( strip_tags ( $this -> title ) );
+        $this -> content = htmlspecialchars ( strip_tags ( $this -> content ) );
+        $this -> iconsid = htmlspecialchars ( strip_tags ( $this -> iconsid ) );
 
         // bind values
-        $stmt->bindParam(":title", $this->title);
-        $stmt->bindParam(":content", $this->content);
-        $stmt->bindParam(":iconsid", $this->iconsid);
+        $stmt -> bindParam ( ":title" , $this -> title );
+        $stmt -> bindParam ( ":content" , $this -> content );
+        $stmt -> bindParam ( ":iconsid" , $this -> iconsid );
 
 
-        if($stmt->execute()){
+        if ( $stmt -> execute () ) {
             return true;
-        }else{
-            print_r($stmt->errorInfo());
+        } else {
+            print_r ( $stmt -> errorInfo () );
             return false;
         }
     }
