@@ -44,7 +44,6 @@ class program
                 SET
                     content=:content,title=:title, iconsid=:iconsid";
 
-
         $stmt = $this -> conn -> prepare ( $query );
 
         // posted values
@@ -57,7 +56,6 @@ class program
         $stmt -> bindParam ( ":content" , $this -> content );
         $stmt -> bindParam ( ":iconsid" , $this -> iconsid );
 
-
         if ( $stmt -> execute () ) {
             return true;
         } else {
@@ -65,11 +63,9 @@ class program
             return false;
         }
     }
-
     // used for paging users
     public function countAll ()
     {
-
         // query to select all user records
         $query = "SELECT id FROM " . $this -> table_name . "";
 

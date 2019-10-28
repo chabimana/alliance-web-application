@@ -40,7 +40,7 @@ if ( $_POST ) {
 
     if ( $program -> createProgram () ) {
         echo "<div class='alert alert-success'>Program created successful.</div>.Click " ?> <a
-            href="<?php echo $home_url; ?>admin/program_registration.php" class="btn btn-primary">Here To Preview The
+            href="<?php echo $home_url; ?>preview.php" class="btn btn-primary">Here To Preview The
             Program On The Homepage</a><?php ;
     } else {
         echo "<div class='alert alert-danger'>Unable to create program.</div>";
