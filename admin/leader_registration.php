@@ -1,4 +1,7 @@
 <?php
+$nameError ="";
+$emailError ="";
+$positionError ="";
 // core configuration
 include_once "../config/core.php";
 
@@ -27,6 +30,24 @@ echo "<div class='col-md-8'>";
 <?php 
 // if the form was submitted 
 if($_POST){
+
+    if (empty($_POST["names"])) {
+$nameError = "Names are required";
+} else {
+$name = $_POST["names"];
+// check name only contains letters and whitespace
+if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+$nameError = "Only letters and white space allowed";
+}
+}if (empty($_POST["email"])) {
+$emailError = "Email is required";
+} else {
+$email = $_POST["email"];
+// check if e-mail address syntax is valid or not
+if (!preg_match("/([w-]+@[w-]+.[w-]+)/",$email)) {
+$emailError = "Invalid email format";
+}
+}
  if (count($_FILES) > 0) {
     if (isset($_FILES['image'])) {
     $leader->position = $_POST['position'];
@@ -48,7 +69,7 @@ if($_POST){
     <div class="box-header with-border">
     <h3 class="box-title">Leader's Information</h3>
     </div>
-    <form role="form"  action="" enctype="multipart/form-data"
+    <form role="form"  action="leader_registration.php" enctype="multipart/form-data"
                             method="post">
                             <div class="box-body">
                                 <div class="form-group">
@@ -60,6 +81,7 @@ if($_POST){
                                     <label for="exampleInputEmail1">Email address</label> <input
                                         type="email" class="form-control" id="exampleInputEmail1"
                                         placeholder="Enter email" name="email" /> 
+                                        <span class="error">* <?php echo $nameError;?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Leader's Position</label> <input
@@ -74,7 +96,9 @@ if($_POST){
                             <!-- /.box-body -->
 
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                               <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span> Add A New Program
+                    </button>
                             </div>
                         </form>
                     <?php

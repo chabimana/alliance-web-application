@@ -1,7 +1,6 @@
 <?php
 $titleError ="";
 $contentError ="";
-$iconError ="";
 // core configuration
 include_once "../config/core.php";
 
