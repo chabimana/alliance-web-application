@@ -55,9 +55,11 @@ class program
         $stmt->bindParam(":content", $this->content);
         $stmt->bindParam(":iconsid", $this->iconsid);
 
+
         if($stmt->execute()){
             return true;
         }else{
+            print_r($stmt->errorInfo());
             return false;
         }
     }
