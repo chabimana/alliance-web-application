@@ -1,4 +1,7 @@
 <?php
+$titleError ="";
+$contentError ="";
+$iconError ="";
 // core configuration
 include_once "../config/core.php";
 
@@ -25,10 +28,19 @@ $icon     = new Icon( $db );
 
 echo "<div class='col-md-8'>";
 
-// if form was posted
-if ( $_POST ) {
-
-    // initialize objects
+if($_POST){
+if (empty($_POST["title"])) {
+$titleError = "program title is required";
+} else {
+$title  = $_POST["title"];
+// check name only contains letters and whitespace
+if (!preg_match("/^[a-zA-Z ]*$/",$title)) {
+$titleError = "Only letters and white space allowed";
+}
+}
+if (empty($_POST["content"])) {
+$contentError = "content is required";
+} else {
     $program = new Program( $db );
 
     $utils = new Utils();
@@ -46,30 +58,31 @@ if ( $_POST ) {
         echo "<div class='alert alert-danger'>Unable to create program.</div>";
     }
 }
+}
 ?>
-
     <form action='program_registration.php' method='post' id='register'>
         <table class='table table-responsive'>
             <tr>
                 <td class='width-30-percent'>Program Title</td>
-                <td><input type='text' name='title' class='form-control' required
+                <td><input type='text' name='title' class='form-control' 
                            value="<?php echo isset( $_POST[ 'title' ] ) ? htmlspecialchars ( $_POST[ 'title' ] , ENT_QUOTES ) : ""; ?>"/>
                 </td>
+                <td><span class="error text-danger">*<?php echo $titleError;?></span></td>
             </tr>
-
             <tr>
                 <td>Program Content</td>
                 <td><textarea rows='15' name='content' class='form-control'
-                              required><?php echo isset( $_POST[ 'content' ] ) ? htmlspecialchars ( $_POST[ 'content' ] , ENT_QUOTES ) : ""; ?></textarea>
+                              ><?php echo isset( $_POST[ 'content' ] ) ? htmlspecialchars ( $_POST[ 'content' ] , ENT_QUOTES ) : ""; ?></textarea>
+
                 </td>
+                <td><span class="error text-danger">*<?php echo $contentError;?></span></td>
             </tr>
 
             <tr>
                 <td>Icon Name Selection</td> 
                 <td><?php
                     $stmt = $icon -> readAll ();
-                    echo "<select class='form-control' name='iconId'>";
-                    echo "<option>Select icon name...</option>";
+                    echo "<select class='form-control' name='iconId' required>";
                     while ( $row_icon = $stmt -> fetch ( PDO::FETCH_ASSOC ) ) {
                         extract ( $row_icon );
                         echo "<option value='{$id}'>{$icon_desc}</option>";
