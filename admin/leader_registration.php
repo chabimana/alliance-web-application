@@ -6,49 +6,51 @@ $positionError ="";
 include_once "../config/core.php";
 
 // set page title
-$page_title = "Leader Registration";
+$page_title = "Program Registration";
 
 // include login checker
 include_once "login_checker.php";
 
+// include classes
 include_once '../config/database.php';
 include_once '../model/Leader.php';
 include_once "../libs/php/utils.php";
+
 // include page header HTML
 include_once "header.php";
-// get database connection
+
+// get database connection since we need icons on the UI before creating a program
 $database = new Database();
-$db = $database->getConnection();
- 
-// pass connection to objects
-$leader = new leader($db);
+$db       = $database -> getConnection ();
 
-// set page headers
-$page_title = "register leader";
 echo "<div class='col-md-8'>";
-?>
-<?php 
-// if the form was submitted 
-if($_POST){
 
-    if (empty($_POST["names"])) {
-$nameError = "Names are required";
+if($_POST){
+if (empty($_POST["names"])) {
+$nameError = "names is required";
 } else {
-$name = $_POST["names"];
+$name  = $_POST["names"];
 // check name only contains letters and whitespace
 if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
 $nameError = "Only letters and white space allowed";
 }
-}if (empty($_POST["email"])) {
+}
+if (empty($_POST["email"])) {
 $emailError = "Email is required";
 } else {
-$email = $_POST["email"];
+$email = test_input($_POST["email"]);
 // check if e-mail address syntax is valid or not
 if (!preg_match("/([w-]+@[w-]+.[w-]+)/",$email)) {
 $emailError = "Invalid email format";
 }
+}if (empty($_POST["position"])) {
+$positionError = "position is required";
 }
- if (count($_FILES) > 0) {
+else{
+if (count($_FILES) > 0) {
+    $leader = new Leader( $db );
+
+    $utils = new Utils();
     if (isset($_FILES['image'])) {
     $leader->position = $_POST['position'];
     $leader->email = $_POST['email'];
@@ -62,6 +64,8 @@ $emailError = "Invalid email format";
     else{
         echo "<div class='alert alert-danger'>Unable to create leader.</div>";
     }
+
+}
 }
 }
 }
@@ -76,17 +80,17 @@ $emailError = "Invalid email format";
                                     <label for="exampleInputPassword1">Full Name</label> <input
                                         type="text" class="form-control" id="exampleInputPassword1"
                                         placeholder="enter full name" name="names" /> 
+                                        <span class="error text-danger">* <?php echo $nameError;?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label> <input
                                         type="email" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Enter email" name="email" /> 
-                                        <span class="error">* <?php echo $nameError;?></span>
+                                        placeholder="Enter email" name="email" /> <span class="error text-danger">* <?php echo $emailError;?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Leader's Position</label> <input
                                         type="text" class="form-control" placeholder="ex: President"
-                                       name="position" />
+                                       name="position" /><span class="error text-danger">* <?php echo $positionError;?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Image input</label> <input
