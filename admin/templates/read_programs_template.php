@@ -42,6 +42,21 @@ else {
     </div>";
 }
 ?>
+<script>
+    $(function () {
+        $('#leaders').DataTable({
+            "processing": true,
+            'paging': true,
+            'lengthChange': false,
+            'searching': true,
+            'ordering': false,
+            'info': true,
+            'autoWidth': false,
+            'pageLength': 2,
+        })
+    })
+</script>
+
 <div class="col-md-12">
     <a href="<?php echo $home_url; ?>admin/program_registration.php" class="btn btn-primary"><span
             class="glyphicon glyphicon-plus">Add Program</a>
