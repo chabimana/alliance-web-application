@@ -10,7 +10,7 @@ $database = new Database();
 $db       = $database -> getConnection ();
 
 $program = new program( $db );
-$leader  = new leader( $db );
+$leader  = new leader( $db ); 
 // query programs
 $stmt = $program -> readAll ();
 $num  = $stmt -> rowCount ();
@@ -69,6 +69,7 @@ $leaderCount     = $leaderStatement -> rowCount ();
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
+            <nav role="navigation">
             <ul class="navbar-nav nav ml-auto">
                 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
                 <li class="nav-item"><a href="#programs-section"
@@ -78,6 +79,15 @@ $leaderCount     = $leaderStatement -> rowCount ();
                                         class="nav-link"><span>Leadership</span></a></li>
                 <li class="nav-item"><a href="#contact-section"
                                         class="nav-link"><span>Contact</span></a></li>
+  <li class="nav-item"><a href="#" class="nav-link">Future Project</a>
+      <ul class="navbar-nav nav ml-auto">
+        <li><a href="#">Sub-1</a></li>
+        <li><a href="#">Sub-2</a></li>
+        <li><a href="#">Sub-3</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
             </ul>
         </div>
     </div>
@@ -172,7 +182,7 @@ $leaderCount     = $leaderStatement -> rowCount ();
                                role="tab" aria-selected="true"
                                aria-controls="v-pills-<?php echo $count; ?>"><span
                                         class="mr-3">
-                                    <i class="fas fa-graduation-cap"
+                                    <i class="<?php echo $row[ 'icon_name' ]; ?>"
                                        aria-hidden="true"></i>
                                 </span><span><?php echo $row[ 'title' ]; ?></span></a>
                             <?php
@@ -195,7 +205,7 @@ $leaderCount     = $leaderStatement -> rowCount ();
                                  id="v-pills-<?php echo $count; ?>" role="tabpanel"
                                  aria-labelledby="v-pills-<?php echo $count; ?>">
 							        <span class="icon mb-3 d-block"><i
-                                                class="fas fa-graduation-cap" aria-hidden="true"></i></span>
+                                                class="<?php echo $row[ 'icon_name' ]; ?>" aria-hidden="true"></i></span>
                                 <h2 class="mb-4">
                                     <span><?php echo $row[ 'title' ]; ?></span>
                                 </h2>

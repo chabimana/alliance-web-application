@@ -25,9 +25,9 @@ class program
         $query = "SELECT
                     *
                 FROM
-                    " . $this -> table_name . "
+                    " . $this -> table_name . " INNER JOIN icons ON icons.id = " .$this -> table_name . ".iconsid
                 ORDER BY
-                    title";
+                   " .$this -> table_name . ".title";
 
         $stmt = $this -> conn -> prepare ( $query );
         $stmt -> execute ();
