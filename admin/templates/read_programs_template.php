@@ -24,7 +24,7 @@ if ( $num > 0 ) {
         echo "<td width='10%'>{$title}</td>";
         echo "<td width='70%'>{$content}</td>";
         echo "<td width='10%'></td>";
-        echo "<td width='10%'><a href=''>Edit</a></td>";
+        echo "<td width='10%'><a href='update_program.php?id={$id}'>Edit</a></td>";
         echo "</tr>";
         echo "</tbody>";
         $count = $count + 1;

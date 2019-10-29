@@ -18,11 +18,11 @@ class icon
     {
         //select all data
         $query = "SELECT
-                    id, icon_desc
+                    iconid, icon_desc
                 FROM
                     " . $this -> table_name . "
                 ORDER BY
-                    id";
+                    iconid";
 
         $stmt = $this -> conn -> prepare ( $query );
         $stmt -> execute ();

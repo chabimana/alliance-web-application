@@ -17,7 +17,27 @@ class program
     {
         $this -> conn = $db;
     }
-
+function readOne(){
+ 
+    $query = "SELECT
+                title, content, iconsid
+            FROM
+                " . $this->table_name . "
+            WHERE
+                id = ?
+            LIMIT
+                0,1";
+ 
+    $stmt = $this -> conn -> prepare( $query );
+    $stmt->bindParam(1, $this->id);
+    $stmt->execute();
+ 
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+    $this->title = $row['title'];
+    $this->content = $row['content'];
+    $this->iconsid = $row['iconsid'];
+}
     // select all programs
     function readAll ()
     {
@@ -25,7 +45,7 @@ class program
         $query = "SELECT
                     *
                 FROM
-                    " . $this -> table_name . " INNER JOIN icons ON icons.id = " .$this -> table_name . ".iconsid
+                    " . $this -> table_name . " INNER JOIN icons ON icons.iconid = " .$this -> table_name . ".iconsid
                 ORDER BY
                    " .$this -> table_name . ".title";
 
@@ -34,7 +54,39 @@ class program
 
         return $stmt;
     }
-
+function update(){
+ 
+    $query = "UPDATE
+                " . $this->table_name . "
+            SET
+                title = :title,
+                content = :content,
+                iconsid = :iconsid
+            
+            WHERE
+                id = :id";
+ 
+    $stmt = $this->conn->prepare($query);
+ 
+    // posted values
+    $this->title=htmlspecialchars(strip_tags($this->title));
+    $this->content=htmlspecialchars(strip_tags($this->content));
+    $this->iconsid=htmlspecialchars(strip_tags($this->iconsid));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+ 
+    // bind parameters
+    $stmt->bindParam(':title', $this->title);
+    $stmt->bindParam(':content', $this->content);
+    $stmt->bindParam(':iconsid', $this->iconsid);
+     $stmt->bindParam(':id', $this->id);
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+ 
+    return false;
+     
+}
     // create program
     function createProgram ()
     {
