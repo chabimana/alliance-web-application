@@ -146,7 +146,64 @@ class leader
             return false;
         }
     }
+    function update(){
+ 
+    $query = "UPDATE
+                " . $this->table_name . "
+            SET
+                names = :names,
+                position = :position,
+                email = :email,
+                image = :image
+            
+            WHERE
+                id = :id";
+ 
+    $stmt = $this->conn->prepare($query);
+ 
+    // posted values
+    $this->names=htmlspecialchars(strip_tags($this->names));
+    $this->position=htmlspecialchars(strip_tags($this->position));
+    $this->email=htmlspecialchars(strip_tags($this->email));
+    $this -> image    = $this -> image;
 
+    $this->id=htmlspecialchars(strip_tags($this->id));
+ 
+     $stmt -> bindParam ( ":image" , $this -> image , PDO::PARAM_LOB );
+        $stmt -> bindParam ( ":position" , $this -> position );
+        $stmt -> bindParam ( ":email" , $this -> email );
+        $stmt -> bindParam ( ":names" , $this -> names );
+     $stmt->bindParam(':id', $this->id);
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+ 
+    return false;
+     
+}
+function readOne(){
+ 
+    $query = "SELECT
+                names, email, position,image
+            FROM
+                " . $this->table_name . "
+            WHERE
+                id = ?
+            LIMIT
+                0,1";
+ 
+    $stmt = $this -> conn -> prepare( $query );
+    $stmt->bindParam(1, $this->id);
+    $stmt->execute();
+ 
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+    $this->names = $row['names'];
+    $this->position = $row['position'];
+    $this->email = $row['email'];
+    $this->image = $row['image'];
+}
 // used for paging users
     public function countAll ()
     {

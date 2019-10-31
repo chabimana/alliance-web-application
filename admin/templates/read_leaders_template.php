@@ -25,7 +25,7 @@ if ( $num > 0 ) {
         echo "<td><img height='150' width='150' class='img-circle center' src='data:image/jpg;base64," . base64_encode ( $row[ 'image' ] ) . "'/></td>";
         echo "<td>{$names}</td>";
         echo "<td>{$position}</td>";
-        echo "<td><a href=''>Edit</a></td>";
+        echo "<td><a href='updateLeader.php?id=$id'>Edit</a></td>";
         echo "</tr>";
         echo "</tbody>";
         $count = $count + 1;
