@@ -33,29 +33,22 @@ $leader->readOne();
 ?>
 <?php
 if($_POST){
-if (empty($_POST["names"]) || empty($_POST["email"])|| empty($_POST["position"]) ){
+if (empty($_POST["names"]) || empty($_POST["email"])|| empty($_POST["position"])){
 if (empty($_POST["names"])) {
 $nameError = "names is required";
-} else {
-$name = $_POST["names"];
-// check name only contains letters and whitespace
-if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-$titleError = "Only letters and white space allowed";
-}
 }
 if (empty($_POST["email"])) {
 $emailError = "Email is required";
-} else {
-$email = $_POST["email"];
-// check if e-mail address syntax is valid or not
-if (!preg_match("/([w-]+@[w-]+.[w-]+)/",$email)) {
-$emailError = "Invalid email format";
-}
 } 
 if (empty($_POST["position"])) {
 $positionError = "position is required";
 }
 }else {
+    $email = test_input($_POST["email"]);
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $emailError = "Invalid email format";
+}else{
+
 if (count($_FILES) > 0) {
     $leader = new Leader( $db );
     $utils = new Utils();
@@ -76,6 +69,13 @@ if (count($_FILES) > 0) {
 }
 }   
 }
+}
+}
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }
 ?>
     <div class="box-header with-border">
@@ -103,7 +103,7 @@ if (count($_FILES) > 0) {
                                 <div class="form-group">
                                     <?php echo ";<img height='150' width='150' class='img-circle center' src='data:image/jpg;base64," . base64_encode ($leader->image) . "'/>"?>
                                     <label for="exampleInputFile">Change Image</label> <input
-                                        type="file" name="image"/>
+                                        type="file" name="image" value='<?php echo 'data:image/jpg;base64," . base64_encode ($leader->image) ."'?>'/>
                                 </div>
                             </div>
                             <!-- /.box-body -->
