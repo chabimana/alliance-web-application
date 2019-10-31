@@ -50,8 +50,6 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }else{
 
 if (count($_FILES) > 0) {
-    $leader = new Leader( $db );
-    $utils = new Utils();
     if (isset($_FILES['image'])) {
     $leader->position = $_POST['position'];
     $leader->email = $_POST['email'];

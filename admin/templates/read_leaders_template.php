@@ -10,6 +10,7 @@ if ( $num > 0 ) {
     echo "<th>#</th>";
     echo "<th>Picture</th>";
     echo "<th>Names</th>";
+    echo "<th>Email</th>";
     echo "<th>Position</th>";
     echo "<th>Actions</th>";
     echo "</tr>";
@@ -24,6 +25,7 @@ if ( $num > 0 ) {
         echo "<td>$count</td>";
         echo "<td><img height='150' width='150' class='img-circle center' src='data:image/jpg;base64," . base64_encode ( $row[ 'image' ] ) . "'/></td>";
         echo "<td>{$names}</td>";
+        echo "<td>{$email}</td>";
         echo "<td>{$position}</td>";
         echo "<td><a href='updateLeader.php?id=$id'>Edit</a></td>";
         echo "</tr>";
