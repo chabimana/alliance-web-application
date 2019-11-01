@@ -224,21 +224,7 @@
 							<span class="icon mb-3 d-block"><i
 								class="fa fa-check-circle" aria-hidden="true"></i></span>
 							<h2 class="mb-4">Conflict Management</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-							</p>
+							<p>Wherever there are people, there always will be conflict. Peoples have to deal with conflict in their everyday life. AER train community from different churches the ability to be able to identify and handle conflicts sensibly, fairly, and efficiently.</p>
 						</div>
 
 						<div class="tab-pane fade py-0" id="v-pills-7" role="tabpanel"
