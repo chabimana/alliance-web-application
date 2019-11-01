@@ -37,7 +37,7 @@
 		id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="#">A.E.R</a>
-			<h6>Alliance Of Envengilicals Of Rwanda</h6>
+			<h6>Alliance Of Envangelicals Of Rwanda</h6>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
 				type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false"
@@ -151,10 +151,10 @@
 							class="nav-link px-4" id="v-pills-4-tab" data-toggle="pill"
 							href="#v-pills-4" role="tab" aria-controls="v-pills-4"
 							aria-selected="false"><span class="mr-3"><i
-								class="fa fa-child" aria-hidden="true"></i></span> Children &amp; Youth
+								class="fa fa-child" aria-hidden="true"></i></span> Children Ministry
 						</a> <a class="nav-link px-4" id="v-pills-5-tab" data-toggle="pill"
 							href="#v-pills-5" role="tab" aria-controls="v-pills-5"
-							aria-selected="false"><span class="mr-3 flaticon-running"></span>Community
+							aria-selected="false"><span class="mr-3"><i class="fa fa-check-circle" aria-hidden="true"></i></span>Community
 							Transformation </a> <a class="nav-link px-4" id="v-pills-6-tab"
 							data-toggle="pill" href="#v-pills-6" role="tab"
 							aria-controls="v-pills-6" aria-selected="false"><span
@@ -171,8 +171,7 @@
 								aria-hidden="true"></i></span> RIET Program</a><a class="nav-link px-4"
 							id="v-pills-8-tab" data-toggle="pill" href="#v-pills-9"
 							role="tab" aria-controls="v-pills-9" aria-selected="false"><span
-							class="mr-3"><i class="fa fa-tasks" aria-hidden="true"></i></span>Leadership
-							Development </a>
+							class="mr-3"><i class="fa fa-child" aria-hidden="true"></i></i></span>Youth Ministry </a>
 					</div>
 				</div>
 				<div
@@ -185,20 +184,7 @@
 							<span class="icon mb-3 d-block"><i class="fa fa-book"
 								aria-hidden="true"></i></span>
 							<h2 class="mb-4">CBSI Program</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
+							<p>Community bible study is program that provides in-depth Bible studies that take participants verse-by-verse through whole books of the Bible. There is emphasis on application of the Bible in the participant’s personal life. Community Bible Study welcomes people from all backgrounds and levels of Bible knowledge. In this program of CBSI we teaches bible in groups according the range of age of Christians from different churches. We have CBSI for children, CBSI for Youth, and CBSI for adults.
 							</p>
 						</div>
 
@@ -207,21 +193,7 @@
 							<span class="icon mb-3 d-block"><i
 								class="fa fa-graduation-cap" aria-hidden="true"></i></span>
 							<h2 class="mb-4">Pastors training</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-							</p>
+							<p>As a pastor is the leader of a Christian congregation who also gives advice and counsel to people from the community or congregation. AER conducts different workshops and seminars for pastors on different Topics So that they can fulfil their responsibilities in efficient way.</p>
 						</div>
 
 						<div class="tab-pane fade py-0" id="v-pills-3" role="tabpanel"
@@ -229,64 +201,22 @@
 							<span class="icon mb-3 d-block"><i class="fa fa-female"
 								aria-hidden="true"></i></span>
 							<h2 class="mb-4">Women Ministry</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-							</p>
+							<p>The Women Ministry of Alliance evangelical of Rwanda is the women’s commission of the Association of evangelicals in Rwanda. This ministry is the network of evangelical Christian women and seeks to be voice and action on issues impacting women. AER seeks to address issues around poverty, literacy, advocacy, gender equality and justice from domestic violence, child protection, peace and security.</p>
 						</div>
 
 						<div class="tab-pane fade py-0" id="v-pills-4" role="tabpanel"
 							aria-labelledby="v-pills-4-tab">
 							<span class="icon mb-3 d-block"><i class="fa fa-child"
 								aria-hidden="true"></i></span>
-							<h2 class="mb-4">Children &amp; Youth</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-							</p>
+							<h2 class="mb-4">Children Ministry</h2>
+							<p>Our passion as AER in this ministry of children is seeing the lives of children transformed. AER believes the best way to do that is to equip leaders in the local church to serve children, volunteers and parents to invest in the lives of children at church and in the home. That’s what we do here at Children’s Ministry where we help the church leaders, Sunday school leaders and children parents from different churches to help the children to grow in the word of God By training them the better way to do that.</p>
 						</div>
 
 						<div class="tab-pane fade py-0" id="v-pills-5" role="tabpanel"
 							aria-labelledby="v-pills-5-tab">
-							<span class="icon mb-3 d-block flaticon-running"></span>
+							<span class="icon mb-3 d-block"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
 							<h2 class="mb-4">Community Transformation</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-							</p>
+							<p>AER keeps community in the word of God through holistic and integral, AER implies a concern for the totality of life instead of being limited to certain “spiritual” areas. This means that both the ultimate and the intimate issues of life are important to God. This is modelled by the word of God, in which God demonstrated a concern for both by sending the divine Son of God to preach good news and address poverty/justice issues (Luke 4:18-19).</p>
 						</div>
 
 						<div class="tab-pane fade py-0" id="v-pills-6" role="tabpanel"
@@ -316,21 +246,7 @@
 							<span class="icon mb-3 d-block"><i
 								class="fa fa-sort-alpha-asc" aria-hidden="true"></i></span>
 							<h2 class="mb-4">Literature Distribution</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-							</p>
+							<p>Many Christians and pastors in the foreign field from different churches have been limited by their own poverty from having an adequate library to use as a resource for studying the Scriptures. As a result of this greatly overlooked need, AER has purposed to assist the churches in rwanda with biblical and theological literature. Where we provide bible and other Christian books and we also help churches to get them easily.</p>
 						</div>
 
 						<div class="tab-pane fade py-0" id="v-pills-08" role="tabpanel"
@@ -338,26 +254,12 @@
 							<span class="icon mb-3 d-block"><i class="fa fa-university"
 								aria-hidden="true"></i></span>
 							<h2 class="mb-4">RIET Program</h2>
-							<p>Jesus lived almost 2000 years ago, but even today people
-								all over the world serve Him. We know this man primarily through
-								four Bible books: Matthew, Mark, Luke and John. First-hand
-								acquaintance with these writings will help us understand Jesus
-								and His message. This course surveys Mark's narrative of Jesus'
-								life.</p>
-							<p>As you study each lesson, please keep a Bible at your side
-								so that you can verify what you are learning by the Scriptures.
-								You will notice that Mark is divided into sixteen major sections
-								(chapters), each of which contains small divisions (verses).
-								When a notation like 5:12 is used in these lessons, you should
-								look at the fifth chapter of Mark and the twelfth verse.</p>
-							<p>
-								<a href="#" class="btn btn-primary px-4 py-3">Learn More</a>
-							</p>
+							<p>AER Owns RIET (Rwanda Institute Evangelical Theology) which train and keep pastors and church leaders. RIET provide Certificate, Diploma, and bachelor’s degree in theology and biblical studies departments, to enhance leadership development in churches. Churches and denominations are encouraged to sponsor their students (pastors) </p>
 						</div>
 						<div class="tab-pane fade py-0" id="v-pills-9" role="tabpanel"
 							aria-labelledby="v-pills-09-tab">
-							<span class="icon mb-3 d-block"><i class="fa fa-tasks" aria-hidden="true"></i></span>
-							<h2 class="mb-4">Leadership Development</h2>
+							<span class="icon mb-3 d-block"><i class="fa fa-child" aria-hidden="true"></i></span>
+							<h2 class="mb-4">Youth Ministry</h2>
 							<p>Jesus lived almost 2000 years ago, but even today people
 								all over the world serve Him. We know this man primarily through
 								four Bible books: Matthew, Mark, Luke and John. First-hand
