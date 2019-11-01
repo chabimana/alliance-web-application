@@ -37,7 +37,7 @@
 		id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="#">A.E.R</a>
-			<h6>Alliance Of Envangelicals Of Rwanda</h6>
+			<!--<h6>Alliance Of Evangelicals Of Rwanda</h6>-->
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
 				type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false"
@@ -55,6 +55,16 @@
 						class="nav-link"><span>Leadership</span></a></li>
 					<li class="nav-item"><a href="#contact-section"
 						class="nav-link"><span>Contact</span></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Future Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Alliance Building</a>
+                            <a class="dropdown-item" href="#">RIET Building</a>
+                            <a class="dropdown-item" href="#">Seminors</a>
+                        </div>
+                    </li>
 				</ul>
 			</div>
 		</div>
@@ -275,7 +285,7 @@
 			<div class="row d-flex">
 				<div class="col-md-6 col-lg-5 d-flex">
 					<div class="img d-flex align-self-stretch align-items-center"
-						style="background-image: url(view/static/images/cross.PNG);"></div>
+						style="background-image: url(view/static/images/cross.png);"></div>
 				</div>
 				<div class="col-md-6 col-lg-7 pl-lg-5 py-5">
 					<div class="py-md-5">
