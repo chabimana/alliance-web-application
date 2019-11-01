@@ -57,12 +57,12 @@
 						class="nav-link"><span>Contact</span></a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Future Projects
+                            *Future Projects
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Alliance Building</a>
                             <a class="dropdown-item" href="#">RIET Building</a>
-                            <a class="dropdown-item" href="#">Seminors</a>
+                            <a class="dropdown-item" href="#">Seminors Of 5k Pastors In 1 Year</a>
                         </div>
                     </li>
 				</ul>
