@@ -293,16 +293,6 @@
 									objectives of promoting the church unit and reconciliation,
 									Remending the church its mission of proclaining the gospel and
 									living according to it</p>
-								<p>Evangelical Alliance Of Rwanda is one of the 33 National
-									Evangilical Alliances in Africa.Was founnded with the
-									objectives of promoting the church unit and reconciliation,
-									Remending the church its mission of proclaining the gospel and
-									living according to it</p>
-								<p>Evangelical Alliance Of Rwanda is one of the 33 National
-									Evangilical Alliances in Africa.Was founnded with the
-									objectives of promoting the church unit and reconciliation,
-									Remending the church its mission of proclaining the gospel and
-									living according to it</p>
 							</div>
 						</div>
 					</div>
@@ -522,7 +512,7 @@
 		</div>
 	</section>
 	<footer class="ftco-footer ftco-section"
-		style="position: fixed; width: 100%; bottom: 0;">
+		style="position: fixed; width: 100%; bottom: 0; background-color: white;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
