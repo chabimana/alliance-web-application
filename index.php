@@ -302,7 +302,7 @@
 									Evangilical Alliances in Africa.Was founnded with the
 									objectives of promoting the church unit and reconciliation,
 									Remending the church its mission of proclaining the gospel and
-									living according to it</p>
+									living according to it.</p>
 							</div>
 						</div>
 					</div>
