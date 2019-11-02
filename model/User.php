@@ -1,5 +1,4 @@
 <?php
-
 // 'user' object
 class User
 {
