@@ -1,5 +1,5 @@
 <?php
-class Events
+class Events{
 // database connection and table name
     private $conn;
     private $table_name = "events";
@@ -16,10 +16,109 @@ class Events
     {
         $this -> conn = $db;
     }
+ /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-    function create (){
-    	this -> createdOn = date('Y-m-d H:i:s');
-    	$query = "INSERT INTO . "$this-> table_name." SET title =:title,
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedOn()
+    {
+        return $this->createdOn;
+    }
+
+    /**
+     * @param mixed $createdOn
+     */
+    public function setCreatedOn($createdOn)
+    {
+        $this->createdOn = $createdOn;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * @param mixed $createdBy
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->createdBy = $createdBy;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    /**
+     * @param mixed $summary
+     */
+    public function setSummary($summary)
+    {
+        $this->summary = $summary;
+    }
+    
+    function create ()
+    {
+    	 $this -> createdOn = date ( 'Y-m-d H:i:s' );
+
+        // insert query
+        $query = "INSERT INTO " . $this -> table_name . "
+            SET title =:title,
     	content = :content,
     	created_on = :createdOn,
     	created_by = :createdBy,
@@ -48,5 +147,36 @@ class Events
         }
 
     }
+    function readAll ()
+    {
+        //select all data
+        $query = "SELECT
+                    *
+                FROM
+                    " . $this -> table_name . " INNER JOIN users ON users.id = " .$this -> table_name . ".created_by
+                ORDER BY
+                   " .$this -> table_name . ".id";
 
+        $stmt = $this -> conn -> prepare ( $query );
+        $stmt -> execute ();
+
+        return $stmt;
+    }
+public function countAll ()
+    {
+        // query to select all user records
+        $query = "SELECT id FROM " . $this -> table_name . "";
+
+        // prepare query statement
+        $stmt = $this -> conn -> prepare ( $query );
+
+        // execute query
+        $stmt -> execute ();
+
+        // get number of rows
+        $num = $stmt -> rowCount ();
+
+        // return row count
+        return $num;
+    }
     }

@@ -36,6 +36,10 @@
                 echo $page_title == "Leaders" ? "class='active'" : ""; ?> >
                     <a href="<?php echo $home_url; ?>admin/leaders.php">Leaders</a>
                 </li>
+                <li <?php
+                echo $page_title == "Events" ? "class='active'" : ""; ?> >
+                    <a href="<?php echo $home_url; ?>admin/events.php">Events</a>
+                </li>
             </ul>
 
             <!-- options in the upper right corner of the page -->
