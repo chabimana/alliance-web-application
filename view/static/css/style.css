@@ -4983,6 +4983,7 @@ a.close.disabled {
     content: ""; }
 
 .carousel-item {
+  height: 400px;
   position: relative;
   display: none;
   float: left;

@@ -28,6 +28,19 @@
     <link rel="stylesheet" href="view/static/css/flaticon.css"/>
     <link rel="stylesheet" href="view/static/css/icomoon.css"/>
     <link rel="stylesheet" href="view/static/css/style.css"/>
+    <style>
+        .item {
+            background: #333;
+            text-align: center;
+            height: 300px;
+        }
+        h2 {
+            margin: 0;
+            color: #888;
+            padding-top: 80px;
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target"
       data-offset="300">
@@ -468,55 +481,6 @@
         </div>
     </div>
 </section>
-<section id="news-section" class="ftco-section bg-dark carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#news-section" data-slide-to="0" class="active"></li>
-        <li data-target="#news-section" data-slide-to="1"></li>
-        <li data-target="#news-section" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title #1</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title #2</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title #3</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control left" href="#news-section" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="carousel-control right" href="#news-section" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-</section>
-
 <section class="ftco-section contact-section ftco-no-pb bg-dark"
          id="contact-section">
     <div class="container">
@@ -606,6 +570,79 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section id="news-section" class="ftco-section bg-dark carousel slide" data-ride="carousel">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-6 heading-section text-center ftco-animate">
+                <span class="subheading">News and Events</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-12">
+                <ol class="carousel-indicators">
+                    <li data-target="#news-section" data-slide-to="0" class="active"></li>
+                    <li data-target="#news-section" data-slide-to="1"></li>
+                    <li data-target="#news-section" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active ">
+                        <img  src="view/static/images/sunset.jpg" alt="..." style="width: 100%">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="card bg-dark mb-3">
+                                <div class="card-header">
+                                    Featured #1
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img  src="view/static/images/sunset.jpg" alt="..." style="width: 100%">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="card bg-dark mb-3">
+                                <div class="card-header">
+                                    Featured #2
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img   src="view/static/images/sunset.jpg" alt="..." style="width: 100%">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="card bg-dark mb-3">
+                                <div class="card-header">
+                                    Featured #3
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control left" href="#news-section" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#news-section" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 </section>
