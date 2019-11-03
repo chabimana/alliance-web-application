@@ -1,4 +1,5 @@
 <?php
+require_once 'sendEmails.php';
 // core configuration
 include_once "config/core.php";
 
@@ -49,7 +50,7 @@ if ( $_POST ) {
 
         // create the user
         if ( $user -> create () ) {
-
+          sendVerificationEmail( $user -> email, $user -> access_code);
             echo "<div class='alert alert-info'>";
             echo "Successfully registered. <a href='{$home_url}login'>Please login</a>.";
             echo "</div>";
@@ -123,5 +124,5 @@ if ( $_POST ) {
 echo "</div>";
 
 // include page footer HTML
-include_once "layout_foot.php";
+include_once "layout_footer.php";
 ?>
