@@ -65,6 +65,8 @@
                             <a class="dropdown-item" href="#">Seminors Of 5k Pastors In 1 Year</a>
                         </div>
                     </li>
+                    <li class="nav-item"><a href="#contact-section"
+                                            class="nav-link"><span>News And Events</span></a></li>
 				</ul>
 			</div>
 		</div>
