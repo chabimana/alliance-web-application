@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
+  --blue: #4169E1;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -8381,7 +8381,7 @@ h1, h2, h3, h4, h5,
               width: 80px;
               background: transparent;
               height: 140px;
-              border: 10px solid #fe9191;
+              
               z-index: -1; }
               @media (min-width: 992px) {
                 .owl-carousel.home-slider .slider-item .slider-text .one-forth .text:after {

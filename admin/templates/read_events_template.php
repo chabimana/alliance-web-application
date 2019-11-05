@@ -1,7 +1,7 @@
 <?php
 // display the table if the number of users retrieved was greater than zero
 if ( $num > 0 ) {
-    echo "<table id='events' class='table table-bordered table-hover'>";
+    echo "<table id='leaders' class='table table-bordered table-hover'>";
 
     // table headers
     echo "<thead>";
@@ -42,7 +42,7 @@ else {
 ?>
 <script>
     $(function () {
-        $('#events').DataTable({
+        $('#leaders').DataTable({
             "processing": true,
             'paging': true,
             'lengthChange': false,

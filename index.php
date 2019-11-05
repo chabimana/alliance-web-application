@@ -78,7 +78,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Alliance Building</a>
                         <a class="dropdown-item" href="#">RIET Building</a>
-                        <a class="dropdown-item" href="#">Seminors Of 5k Pastors In 1 Year</a>
+                        <a class="dropdown-item" href="#">Sponsor Of 5000 Pastors In 3 Year</a>
                     </div>
                 </li>
 
@@ -349,7 +349,7 @@
                             <h2 class="mb-4"
                                 style="font-size: 34px; text-transform: capitalize;">
                                 We're Functioning for Almost <span class="number"
-                                                                   data-number="20">0</span> Years
+                                                                   data-number="33">0</span> Years
                             </h2>
                             <p>Evangelical Alliance Of Rwanda is one of the 33 National
                                 Evangilical Alliances in Africa.Was founnded with the

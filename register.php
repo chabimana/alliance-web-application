@@ -44,7 +44,6 @@ if ( $_POST ) {
         $user -> lastname       = $_POST[ 'lastname' ];
         $user -> contact_number = $_POST[ 'contact_number' ];
         $user -> address        = $_POST[ 'address' ];
-        $user -> password       = $_POST[ 'password' ];
         $user -> access_level   = 'Customer';
         $user -> status         = 1;
 
@@ -101,11 +100,6 @@ if ( $_POST ) {
                 <td><input type='email' name='email' class='form-control' required
                            value="<?php echo isset( $_POST[ 'email' ] ) ? htmlspecialchars ( $_POST[ 'email' ] , ENT_QUOTES ) : ""; ?>"/>
                 </td>
-            </tr>
-
-            <tr>
-                <td>Password</td>
-                <td><input type='password' name='password' class='form-control' required id='passwordInput'></td>
             </tr>
 
             <tr>

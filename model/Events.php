@@ -8,8 +8,8 @@ class Events{
     public $id;
     public $title;
     public $content;
-    public $createdOn;
-    public $createdBy;
+    public $create_on;
+    public $created_by;
     public $summary;
 
     public function __construct ( $db )
@@ -114,14 +114,15 @@ class Events{
     
     function create ()
     {
-    	 $this -> createdOn = date ( 'Y-m-d H:i:s' );
+    	 $this -> create_on = date ( 'Y-m-d H:i:s' );
 
         // insert query
         $query = "INSERT INTO " . $this -> table_name . "
-            SET title =:title,
+            SET 
+        title =:title,
     	content = :content,
-    	created_on = :createdOn,
-    	created_by = :createdBy,
+    	create_on = :create_on,
+    	created_by = :created_by,
     	summary = :summary
     	";
     	  $stmt = $this -> conn -> prepare ( $query );
@@ -129,13 +130,13 @@ class Events{
         // sanitize
         $this -> title      = htmlspecialchars ( strip_tags ( $this -> title ) );
         $this -> content       = htmlspecialchars ( strip_tags ( $this -> content ) );
-        $this -> createdBy          = htmlspecialchars ( strip_tags ( $this -> createdBy ) );
+        $this -> created_by          = htmlspecialchars ( strip_tags ( $this -> created_by ) );
         $this -> summary          = htmlspecialchars ( strip_tags ( $this -> summary ) );
         // bind the values
         $stmt -> bindParam ( ':title' , $this -> title );
         $stmt -> bindParam ( ':content' , $this -> content );
-        $stmt -> bindParam ( ':created_by' , $this -> createdBy );
-        $stmt -> bindParam ( ':created_on' , $this -> createdOn );
+        $stmt -> bindParam ( ':created_by' , $this -> created_by );
+        $stmt -> bindParam ( ':create_on' , $this -> create_on );
         $stmt -> bindParam ( ':summary' , $this -> summary );
 
         // execute the query, also check if query was successful
@@ -155,7 +156,7 @@ class Events{
                 FROM
                     " . $this -> table_name . " INNER JOIN users ON users.id = " .$this -> table_name . ".created_by
                 ORDER BY
-                   " .$this -> table_name . ".id";
+                   " .$this -> table_name . ".create_on DESC LIMIT 0, 5";
 
         $stmt = $this -> conn -> prepare ( $query );
         $stmt -> execute ();

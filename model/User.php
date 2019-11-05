@@ -248,7 +248,25 @@ class User
         // return false if email does not exist in the database
         return false;
     }
-
+function readOne(){
+ 
+    $query = "SELECT
+                *
+            FROM
+                " . $this->table_name . "
+            WHERE
+                email = ?
+            LIMIT
+                0,1";
+ 
+    $stmt = $this -> conn -> prepare( $query );
+    $stmt->bindParam(1, $this->email);
+    $stmt->execute();
+ 
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+    $this->id = $row['id'];
+}
     // create new user record
     function create ()
     {
