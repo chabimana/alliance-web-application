@@ -1,7 +1,7 @@
 <?php
 // core configuration
 include_once "../config/core.php";
-require_once '../sendEmails.php';
+require_once 'sendEmails.php';
 
 // set page title
 $page_title = "Register";

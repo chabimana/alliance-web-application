@@ -1,5 +1,5 @@
 <?php
-require_once './vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
@@ -9,7 +9,7 @@ $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
 // Create the Mailer using your created Transport
 $mailer = new Swift_Mailer($transport);
 
-function sendVerificationEmail($userEmail, $token)
+function sendVerificationEmail($userEmail, $token,$password)
 {
     global $mailer;
     $body = '<!DOCTYPE html>
@@ -17,27 +17,13 @@ function sendVerificationEmail($userEmail, $token)
 
     <head>
       <meta charset="UTF-8">
-      <title>Test mail</title>
-      <style>
-        .wrapper {
-          padding: 20px;
-          color: #444;
-          font-size: 1.3em;
-        }
-        a {
-          background: #592f80;
-          text-decoration: none;
-          padding: 8px 15px;
-          border-radius: 5px;
-          color: #fff;
-        }
-      </style>
+      <title>verify email</title>
     </head>
 
     <body>
       <div class="wrapper">
-        <p>Hey user of alliance. Please click on the link below to verify your account:.</p>
-        <a href="http://localhost:8080/alliance/verify_email.php?access_code=' . $token . '">Verify Email!</a>
+        <p>you are registerd as alliance user. click to verify your account:.</p>
+        <a href="http://localhost:8080/alliance/verify_email.php?access_code=' . $token . '">Verify Email!</a> and your password is : ' . $password .'
       </div>
     </body>
 
@@ -57,4 +43,5 @@ function sendVerificationEmail($userEmail, $token)
     } else {
         return false;
     }
-} 
+}
+?>
