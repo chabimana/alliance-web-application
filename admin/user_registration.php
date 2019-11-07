@@ -1,6 +1,7 @@
 <?php
 // core configuration
 include_once "../config/core.php";
+require_once '../sendEmails.php';
 
 // set page title
 $page_title = "Register";
@@ -43,22 +44,17 @@ if ( $_POST ) {
         $user -> lastname       = $_POST[ 'lastname' ];
         $user -> contact_number = $_POST[ 'contact_number' ];
         $user -> address        = $_POST[ 'address' ];
-        $user -> password       = $_POST[ 'password' ];
         $user -> access_level   = 'Admin';
         $user -> status         = 0;
         // access code for email verification
         $access_code=$utils->getToken();
+        $password=$utils->randomPassword();
+        $user ->password=$password;
         $user->access_code=$access_code;
 
         // create the user
         if($user->create()){
-            // send confimation email
-            $send_to_email=$_POST['email'];
-            $body="Hi {$send_to_email}.<br /><br />";
-            $body.="Please click the following link to verify your email and login: {$home_url}verify/?access_code={$access_code}";
-            $subject="Verification Email";
-
-            if($utils->sendEmailViaPhpMail($send_to_email, $subject, $body)){
+            if(sendVerificationEmail( $user -> email, $user -> access_code,$user ->password)){
                 echo "<div class='alert alert-success'>
             Verification link was sent to your email. Click that link to login.
         </div>";
@@ -118,12 +114,6 @@ if ( $_POST ) {
                            value="<?php echo isset( $_POST[ 'email' ] ) ? htmlspecialchars ( $_POST[ 'email' ] , ENT_QUOTES ) : ""; ?>"/>
                 </td>
             </tr>
-
-            <tr>
-                <td>Password</td>
-                <td><input type='password' name='password' class='form-control' required id='passwordInput'></td>
-            </tr>
-
             <tr>
                 <td></td>
                 <td>

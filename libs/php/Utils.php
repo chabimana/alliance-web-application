@@ -29,21 +29,62 @@ class Utils
         } while ( $rnd >= $range );
         return $min + $rnd;
     }
+    function randomPassword() {
+    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+}
+function sendEmail($userEmail, $token)
+{
+    global $mailer;
+    $body = '<!DOCTYPE html>
+    <html lang="en">
 
-    // send email using built in php mailer
-    public function sendEmailViaPhpMail ( $send_to_email , $subject , $body )
-    {
-        $from_name  = "Alliance";
-        $from_email = "ichristine180@gmail.com";
-
-        $headers = "MIME-Version: 1.0\r\n";
-        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-        $headers .= "From: {$from_name} <{$from_email}> \n";
-
-        if ( mail ( $send_to_email , $subject , $body , $headers ) ) {
-            return true;
+    <head>
+      <meta charset="UTF-8">
+      <title>Test mail</title>
+      <style>
+        .wrapper {
+          padding: 20px;
+          color: #444;
+          font-size: 1.3em;
         }
+        a {
+          background: #592f80;
+          text-decoration: none;
+          padding: 8px 15px;
+          border-radius: 5px;
+          color: #fff;
+        }
+      </style>
+    </head>
 
+    <body>
+      <div class="wrapper">
+        <p>Hey user of alliance. Please click on the link below to rest your password:.</p>
+        <a href="http://localhost:8080/alliance/reset_password.php?access_code=' . $token . '">Rest password!</a>
+    </body>
+
+    </html>';
+
+    // Create a message
+    $message = (new Swift_Message('rest your password'))
+        ->setFrom('tumudivi12345@gmail.com')
+        ->setTo($userEmail)
+        ->setBody($body, 'text/html');
+
+    // Send the message
+    $result = $mailer->send($message);
+
+    if ($result > 0) {
+        return true;
+    } else {
         return false;
     }
+  }
 }

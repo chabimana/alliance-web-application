@@ -1,7 +1,7 @@
 <?php
 // core configuration
 include_once "config/core.php";
-
+require_once 'admin/sendEmails.php';
 // set page title
 $page_title = "Forgot Password";
 
@@ -39,14 +39,9 @@ if ( $_POST ) {
 
         $user -> access_code = $access_code;
         if ( $user -> updateAccessCode () ) {
-
-            // send reset link
-            $body          = "Hi there.<br /><br />";
-            $body          .= "Please click the following link to reset your password: {$home_url}reset_password/?access_code={$access_code}";
-            $subject       = "Reset Password";
             $send_to_email = $_POST[ 'email' ];
 
-            if ( $utils -> sendEmailViaPhpMail ( $send_to_email , $subject , $body ) ) {
+            if ($utils->sendEmail( $send_to_email , $user -> access_code)){
                 echo "<div class='alert alert-info'>
                             Password reset link was sent to your email.
                             Click that link to reset your password.

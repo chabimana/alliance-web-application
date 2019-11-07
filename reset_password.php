@@ -10,7 +10,7 @@ include_once "login_checker.php";
 
 // include classes
 include_once "config/database.php";
-include_once "objects/user.php";
+include_once "model/user.php";
 
 // get database connection
 $database = new Database();
@@ -66,5 +66,5 @@ echo "<form action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "?access_code={
 echo "</div>";
 
 // include page footer HTML
-include_once "layout_foot.php";
+include_once "layout_footer.php";
 ?>

@@ -1,5 +1,5 @@
 <?php
-include_once '../vendor/autoload.php';
+require_once './vendor/autoload.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
@@ -8,7 +8,8 @@ $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
 
 // Create the Mailer using your created Transport
 $mailer = new Swift_Mailer($transport);
-function sendVerificationEmail($userEmail, $token, $password)
+
+function sendVerificationEmail($userEmail, $token)
 {
     global $mailer;
     $body = '<!DOCTYPE html>
@@ -36,7 +37,7 @@ function sendVerificationEmail($userEmail, $token, $password)
     <body>
       <div class="wrapper">
         <p>Hey user of alliance. Please click on the link below to verify your account:.</p>
-        <a href="http://localhost:8080/alliance/admin/verify_email.php?access_code=' . $token . '">Verify Email!</a> this Your Password: '.$password.' 
+        <a href="http://localhost:8080/alliance/verify_email.php?access_code=' . $token . '">Verify Email!</a>
       </div>
     </body>
 
@@ -56,5 +57,4 @@ function sendVerificationEmail($userEmail, $token, $password)
     } else {
         return false;
     }
-  }
 } 

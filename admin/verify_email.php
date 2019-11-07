@@ -27,6 +27,6 @@ else {
     $user -> updateStatusByAccessCode ();
 
     // and the redirect
-    header ( "Location: {$home_url}login.php?action=email_verified" );
+    header ( "Location:{$home_url}../login.php?action=email_verified" );
 }
 ?>
