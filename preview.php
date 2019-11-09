@@ -5,12 +5,14 @@ $page_title = "Preview Programs";
 include_once 'config/database.php';
 include_once 'model/Program.php';
 include_once 'model/Leader.php';
+include_once 'model/Events.php';
 
 $database = new Database();
 $db       = $database -> getConnection ();
 
 $program = new program( $db );
 $leader  = new leader( $db ); 
+$events  = new Events( $db ); 
 // query programs
 $stmt = $program -> readAll ();
 $num  = $stmt -> rowCount ();
@@ -20,6 +22,9 @@ $statement = $program -> readAll ();
 //Select All Leaders
 $leaderStatement = $leader -> readAll ();
 $leaderCount     = $leaderStatement -> rowCount ();
+//Select All events
+$eventsStatement = $events -> readAll ();
+$eventsCount     = $eventsStatement -> rowCount ();
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +65,6 @@ $leaderCount     = $leaderStatement -> rowCount ();
         id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="#">A.E.R</a>
-        <h6>Alliance Of Envengilicals Of Rwanda</h6>
         <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
                 type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false"
@@ -79,12 +83,19 @@ $leaderCount     = $leaderStatement -> rowCount ();
                                         class="nav-link"><span>Leadership</span></a></li>
                 <li class="nav-item"><a href="#contact-section"
                                         class="nav-link"><span>Contact</span></a></li>
-  <li class="nav-item"><a href="#" class="nav-link">Future Project</a>
-      <ul class="navbar-nav nav ml-auto">
-        <li><a href="#">Sub-1</a></li>
-        <li><a href="#">Sub-2</a></li>
-        <li><a href="#">Sub-3</a></li>
-      </ul>
+  <li class="nav-item"><a href="#news-section"
+                                        class="nav-link"><span>News And Events</span></a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        *Future Projects
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Alliance Building</a>
+                        <a class="dropdown-item" href="#">RIET Building</a>
+                        <a class="dropdown-item" href="#">Sponsor Of 5000 Pastors In 3 Year</a>
+                    </div>
+                </li>
     </li>
   </ul>
 </nav>
@@ -404,6 +415,60 @@ $leaderCount     = $leaderStatement -> rowCount ();
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section id="news-section" class="ftco-section bg-dark carousel slide" data-ride="carousel">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-6 heading-section text-center ftco-animate">
+                <span class="subheading">News and Events</span>
+            </div>
+        </div>
+        <div class="row">
+            <?php
+                    if ($num > 0) {
+                        $count = 1;
+                        while ( $row = $eventsStatement -> fetch ( PDO::FETCH_ASSOC ) ) {
+                            extract ( $row );
+                            ?>
+            <div class="col-md-1"></div>
+            <div class="col-md-12">
+                <ol class="carousel-indicators">
+                    <li data-target="#news-section" data-slide-to="<?php echo $count;?>"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item <?php if ($count === 1) {
+                                echo 'active';
+                            } ?>">
+                        <img  src="view/static/images/sunset.jpg" alt="..." style="width: 100%">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="card bg-dark mb-3">
+                                <div class="card-header">
+                                    <?php echo $row[ 'title' ]; ?>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $row[ 'title' ]; ?></h5>
+                                    <p class="card-text"><?php echo $row[ 'summary' ]; ?></p>
+                                    <a href="#" class="btn btn-primary">View full story</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <?php
+                            $count ++;
+                        }
+                    }
+                    ?>
+                </div>
+                <a class="carousel-control left" href="#news-section" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#news-section" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 </section>
