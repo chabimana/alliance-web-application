@@ -1,6 +1,8 @@
 <?php
 include_once '../vendor/autoload.php';
 
+include 'config/core.php';
+
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
     ->setUsername('tumudivi12345@gmail.com')
@@ -36,7 +38,7 @@ function sendVerificationEmail($userEmail, $token, $password)
     <body>
       <div class="wrapper">
         <p>Hey user of alliance. Please click on the link below to verify your account:.</p>
-        <a href="http://localhost:8080/alliance/admin/verify_email.php?access_code=' . $token . '">Verify Email!</a> this Your Password: '.$password.' 
+        <a href="'.$home_url.'admin/verify_email.php?access_code=' . $token . '">Verify Email!</a> this Your Password: '.$password.' 
       </div>
     </body>
 
