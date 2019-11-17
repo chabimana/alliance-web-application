@@ -9,7 +9,7 @@ session_start();
 date_default_timezone_set('Africa/Kigali');
 
 // home page url
-$home_url=$_SERVER['HTTP_HOST'];
+$home_url= 'http://' . $_SERVER['HTTP_HOST'] . '/';
 
 // page given in URL parameter, default page is one
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
