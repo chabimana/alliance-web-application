@@ -42,6 +42,8 @@ class Utils
 function sendEmail($userEmail, $token)
 {
     global $mailer;
+    $domain=$_SERVER['HTTP_HOST'];
+
     $body = '<!DOCTYPE html>
     <html lang="en">
 
@@ -67,7 +69,7 @@ function sendEmail($userEmail, $token)
     <body>
       <div class="wrapper">
         <p>Hey user of alliance. Please click on the link below to rest your password:.</p>
-        <a href="http://localhost:8080/alliance/reset_password.php?access_code=' . $token . '">Rest password!</a>
+        <a href="'.$domain.'/reset_password.php?access_code=' . $token . '">Rest password!</a>
     </body>
 
     </html>';
