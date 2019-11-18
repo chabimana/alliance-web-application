@@ -14,7 +14,7 @@ include_once "login_checker.php";
 include_once '../config/database.php';
 include_once '../model/Program.php';
 include_once '../model/Icon.php';
-include_once "../libs/php/utils.php";
+include_once "../libs/php/Utils.php";
 
 // include page header HTML
 include_once "header.php";

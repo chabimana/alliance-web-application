@@ -17,7 +17,7 @@ $db       = $database -> getConnection ();
 $leader = new Leader( $db );
 
 // set page title
-$page_title = "Leaders";
+$page_title = "leaders";
 
 // include page header HTML
 include_once "header.php";
@@ -48,7 +48,7 @@ include_once "footer.php";
             'paging': true,
             'lengthChange': false,
             'searching': true,
-            'ordering': true,
+            'ordering': false,
             'info': true,
             'autoWidth': false,
             'pageLength': 2,

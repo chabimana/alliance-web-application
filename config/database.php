@@ -3,9 +3,9 @@ class Database{
 
     // specify your own database credentials
     private $host = "localhost";
-    private $db_name = "alliance_alliance";
-    private $username = "alliance_AER";
-    private $password = "ALLIANCE@!123";
+    private $db_name = "alliance";
+    private $username = "root";
+    private $password = "";
     public $conn;
 
 
