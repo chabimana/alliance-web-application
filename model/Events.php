@@ -118,17 +118,15 @@ class Events{
             FROM
                 " . $this->table_name . "
             WHERE
-                id = ?
-            LIMIT
-                0,1";
+                id = ?";
  
     $stmt = $this -> conn -> prepare( $query );
     $stmt->bindParam(1, $this->id);
     $stmt->execute();
  
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
- 
-    $this->id = $row['id'];
+
+    return $row;
 }
     function create ()
     {
