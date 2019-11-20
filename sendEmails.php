@@ -1,7 +1,7 @@
 <?php
 include_once '../vendor/autoload.php';
 
-include 'config/core.php';
+include '../config/core.php';
 
 // Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
