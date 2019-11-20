@@ -237,4 +237,39 @@ function delete(){
         return false;
     }
 }
+// check if given position exist in the database
+    function positionExists ()
+    {
+
+        // query to check if position exists
+        $query = "SELECT id
+            FROM " . $this -> table_name . "
+            WHERE position = ?
+            LIMIT 0,1";
+
+        // prepare the query
+        $stmt = $this -> conn -> prepare ( $query );
+
+        // sanitize
+        $this -> position = htmlspecialchars ( strip_tags ( $this -> position ) );
+
+        // bind given access_code value
+        $stmt -> bindParam ( 1 , $this -> position );
+
+        // execute the query
+        $stmt -> execute ();
+
+        // get number of rows
+        $num = $stmt -> rowCount ();
+
+        // if access_code exists
+        if ( $num > 0 ) {
+
+            // return true because access_code exists in the database
+            return true;
+        }
+        // return false if access_code does not exist in the database
+        return false;
+    }
+
 }

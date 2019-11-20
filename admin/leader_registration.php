@@ -22,6 +22,8 @@ include_once "header.php";
 // get database connection since we need icons on the UI before creating a program
 $database = new Database();
 $db       = $database -> getConnection ();
+$leader = new Leader( $db );
+    $utils = new Utils();
 
 echo "<div class='col-md-8'>";
 
@@ -36,15 +38,20 @@ $emailError = "Email is required";
 if (empty($_POST["position"])) {
 $positionError = "position is required";
 }
-}else {
+}
+$leader->position = $_POST['position'];
+if ($leader->positionExists ()) {
+   echo "<div class='alert alert-danger'>";
+        echo "The  Position you provide has already registered for the other leader!";
+        echo "</div>";
+}
+else {
     $email = test_input($_POST["email"]);
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   $emailError = "Invalid email format";
 }else{
 
 if (count($_FILES) > 0) {
-    $leader = new Leader( $db );
-    $utils = new Utils();
     if (isset($_FILES['image'])) {
     $leader->position = $_POST['position'];
     $leader->email = $_POST['email'];
@@ -90,9 +97,9 @@ function test_input($data) {
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Leader's Position</label><select name="position" class="form-control">
-                                        <option>Director OF AER</option>
-                                        <option>vice President</option>
-                                        <option>General Secretary</option>
+                                        <option value="Director_OF_AER">Director OF AER</option>
+                                        <option value="president">President</option>
+                                        <option value="general_secretary">General Secretary</option>
                                     </select><span class="error text-danger">* <?php echo $positionError;?></span>
                                 </div>
                                 <div class="form-group">

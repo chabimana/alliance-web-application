@@ -29,9 +29,9 @@ $eventsCount     = $eventsStatement -> rowCount ();
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:data="http://www.w3.org/1999/xhtml">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>AER</title>
-    <meta charset="utf-8"/>
+    
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
@@ -215,7 +215,7 @@ $eventsCount     = $eventsStatement -> rowCount ();
                                 echo 'active'; ?> tab-pane fade show  py-0"
                                  id="v-pills-<?php echo $count; ?>" role="tabpanel"
                                  aria-labelledby="v-pills-<?php echo $count; ?>">
-							        <span class="icon mb-3 d-block"><i
+                                    <span class="icon mb-3 d-block"><i
                                                 class="<?php echo $row[ 'icon_name' ]; ?>" aria-hidden="true"></i></span>
                                 <h2 class="mb-4">
                                     <span><?php echo $row[ 'title' ]; ?></span>
@@ -251,8 +251,8 @@ $eventsCount     = $eventsStatement -> rowCount ();
                 <div class="py-md-5">
                     <div class="row justify-content-start pb-3">
                         <div class="col-md-12 heading-section ftco-animate">
-								<span class="subheading">About Alliance Of Evangilicals
-									Of Rwanda</span>
+                                <span class="subheading">About Alliance Of Evangilicals
+                                    Of Rwanda</span>
                             <h2 class="mb-4"
                                 style="font-size: 34px; text-transform: capitalize;">
                                 We're Functioning for Almost <span class="number"
@@ -351,7 +351,7 @@ $eventsCount     = $eventsStatement -> rowCount ();
                         <input type="text" class="form-control" placeholder="Subject"/>
                     </div>
                     <div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control"
+                            <textarea name="" id="" cols="30" rows="7" class="form-control"
                                       placeholder="Message"></textarea>
                     </div>
                     <div class="form-group">
@@ -435,7 +435,9 @@ $eventsCount     = $eventsStatement -> rowCount ();
             <div class="col-md-1"></div>
             <div class="col-md-12">
                 <ol class="carousel-indicators">
-                    <li data-target="#news-section" data-slide-to="<?php echo $count;?>"></li>
+                    <<li data-target="#news-section" data-slide-to="<?php echo $count;?>" class="<?php if ($count === 1) {
+                                echo 'active';
+                            } ?>"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item <?php if ($count === 1) {
@@ -450,7 +452,7 @@ $eventsCount     = $eventsStatement -> rowCount ();
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $row[ 'title' ]; ?></h5>
                                     <p class="card-text"><?php echo $row[ 'summary' ]; ?></p>
-                                    <a href="#" class="btn btn-primary">View full story</a>
+      <button class="btn btn-primary view_detail" eid="<?php echo $row[ 'id' ];  ?>">View</button>
                                 </div>
                             </div>
                         </div>
@@ -469,11 +471,39 @@ $eventsCount     = $eventsStatement -> rowCount ();
                 </a>
             </div>
             <div class="col-md-1"></div>
+            <div id="show_modal" class="modal fade" role="dialog" style="background: #000;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 24px; color: #17919e; text-shadow: 1px 1px #ccc;"><i class="fa fa-folder"></i> Student Details</h3>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-striped">
+          <thead class="btn-primary">
+            <tr>
+              <th>title</th>
+              <th>content</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><p id="title"></p></td> //here i am showing the data with the help of id
+              <td><p id="content"></p></td>//here i am showing the data with the help of id
+            </tr>
+          </tbody>
+       </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
     </div>
 </section>
 <footer class="ftco-footer ftco-section"
-        style="position: fixed; width: 100%; bottom: 0;">
+        style="position: fixed; width: 100%; bottom: 0; background-color: white;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -520,6 +550,26 @@ $eventsCount     = $eventsStatement -> rowCount ();
 <script src="view/static/js/scrollax.min.js"></script>
 
 <script src="view/static/js/main.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
 
+      $('.view_detail').click(function(){
+          
+          var id = $(this).attr('id'); //get the attribute value
+          
+          $.ajax({
+              url : "<?php echo base_url(); ?>Events/readOne",
+              data:{id : id},
+              method:'GET',
+              dataType:'json',
+              success:function(response) {
+                $('#content').html(response.content); //hold the response in id and show on popup
+                $('#title').html(response.title);
+                $('#show_modal').modal({backdrop: 'static', keyboard: true, show: true});
+            }
+          });
+      });
+    });
+</script>
 </body>
 </html>
