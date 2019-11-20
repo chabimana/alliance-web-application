@@ -89,9 +89,11 @@ function test_input($data) {
                                         placeholder="Enter email" name="email" /> <span class="error text-danger">* <?php echo $emailError;?></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Leader's Position</label> <input
-                                        type="text" class="form-control" placeholder="ex: President"
-                                       name="position" /><span class="error text-danger">* <?php echo $positionError;?></span>
+                                    <label for="exampleInputPassword1">Leader's Position</label><select name="position" class="form-control">
+                                        <option>Director OF AER</option>
+                                        <option>vice President</option>
+                                        <option>General Secretary</option>
+                                    </select><span class="error text-danger">* <?php echo $positionError;?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Image input</label> <input
