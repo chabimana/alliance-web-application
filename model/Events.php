@@ -166,9 +166,10 @@ class Events{
     }
     function readAll ()
     {
+
         //select all data
         $query = "SELECT
-                    *
+                    " . $this -> table_name . ".id as eventid,  title, content, summary, users.id as userId, firstname, lastname, email
                 FROM
                     " . $this -> table_name . " INNER JOIN users ON users.id = " .$this -> table_name . ".created_by
                 ORDER BY

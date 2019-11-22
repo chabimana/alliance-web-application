@@ -25,6 +25,8 @@ $leaderStatement = $leader -> readAll ();
 $leaderCount     = $leaderStatement -> rowCount ();
 //Select All events
 $eventsStatement = $events -> readAll ();
+
+$eventsContent=$events->readAll();
 $eventsCount     = $eventsStatement -> rowCount ();
 ?>
 
@@ -427,72 +429,95 @@ id="contact-section">
             </div>
         </div>
         <div class="row">
-            <?php
-            if ($num > 0) {
-                $count = 1;
-                while ( $row = $eventsStatement -> fetch ( PDO::FETCH_ASSOC ) ) {
-                    extract ( $row );
-                    ?>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-12">
-                        <ol class="carousel-indicators">
-                            <<li data-target="#news-section" data-slide-to="<?php echo $count;?>" class="<?php if ($count === 1) {
+            <div class="col-md-1"></div>
+            <div class="col-md-12">
+                <ol class="carousel-indicators">
+                    <?php
+                    if ($num > 0) {
+                        $count = 0;                        
+                        while ( $row = $eventsStatement -> fetch ( PDO::FETCH_ASSOC ) ) {
+                            extract ( $row );
+                            ?>
+                            <li data-target="#news-section" data-slide-to="<?php echo $count;?>" class="<?php if ($count === 1) {
                                 echo 'active';
                             } ?>"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item <?php if ($count === 1) {
+                            <?php
+                            $count++;
+                        }
+                    }
+
+                    ?>
+                </ol>
+                <div class="carousel-inner">
+                    <?php
+                    if ($num > 0) {
+                        $counti = 0;
+                        while ( $rowi = $eventsContent -> fetch ( PDO::FETCH_ASSOC ) ) {
+                            extract ( $rowi );
+                            ?>
+                            <div class="carousel-item <?php if ($counti === 0) {
                                 echo 'active';
                             } ?>">
                             <img  src="view/static/images/sunset.jpg" alt="..." style="width: 100%">
                             <div class="carousel-caption d-none d-md-block">
                                 <div class="card bg-dark mb-3">
                                     <div class="card-header">
-                                        <?php echo $row[ 'title' ]; ?>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $row[ 'title' ]; ?></h5>
-                                        <p class="card-text"><?php echo $row[ 'summary' ]; ?></p>
-                                        <td><input  type="button" name="view" value="More..." id="<?php echo $row["id"]; ?>" class="btn btn-info btn-xs view_data" /></td>  
-                                    </tr>  
-                                </div>
+                                     <?php echo $rowi[ 'title' ]; ?>
+                                 </div>
+                                 <div class="card-body">
+                                    <h5 class="card-title"><?php echo $rowi[ 'title' ]; ?></h5>
+                                    <p class="card-text"><?php echo $rowi[ 'summary' ]; ?></p>
+                                    <td><input  type="button" name="view" value="More..." id="<?php echo $rowi['eventid']; ?>" class="btn btn-info btn-xs view_data" /></td>  
+                                </tr>  
                             </div>
                         </div>
                     </div>
-                    <?php
-                    $count ++;
-                }
+                </div>
+                <?php
+                $counti++;
             }
-            ?>
-        </div>
-        <a class="carousel-control left" href="#news-section" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#news-section" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
+        }
+        ?>
     </div>
+    <a class="carousel-control left" href="#news-section" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#news-section" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
 
-    <div id="showModal" class="modal fade">  
-      <div class="modal-dialog modal-lg">  
-       <div class="modal-content">  
-        <div class="modal-header"> 
-         <h4 class="modal-title" id="title"></h4>  
-     </div>  
-     <div class="modal-body">  
-        <p id="summary" class="font-weight-bold font-italic" style="text-align: justify;"></p>
-        <p id="content" style="text-align: justify;"></p>
-     </div>  
-     <div class="modal-footer">  
-         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
-     </div>  
+    <a class="carousel-control-prev" href="#news-section" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#news-section" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<div class="col-md-1"></div>
+</div>
+</div>
+</section>
+<div id="showModal" class="modal fade">  
+  <div class="modal-dialog modal-lg">  
+   <div class="modal-content">  
+    <div class="modal-header"> 
+     <h4 class="modal-title" id="title"></h4>  
  </div>  
+ <div class="modal-body">  
+    <p id="summary" class="font-weight-bold font-italic" style="text-align: justify;"></p>
+    <p id="content" style="text-align: justify;"></p>
+</div>  
+<div class="modal-footer">  
+ <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
+</div>  
+</div>  
 </div>  
 </div>  
 <div class="col-md-1"></div>
 </div>
 </div>
-</section>
 <footer class="ftco-footer ftco-section"
 style="position: fixed; width: 100%; bottom: 0; background-color: white;">
 <div class="container">
@@ -542,9 +567,9 @@ style="position: fixed; width: 100%; bottom: 0; background-color: white;">
 <script type="text/javascript">   
   $(document).ready(function() {
       $('.view_data').click(function(){
-       
+
           var id = $(this).attr('id'); //get the attribute value
-           console.log('we reach here: '+id);
+          console.log('we reach here: '+id);
           $.ajax({
               url : '<?php echo $home_url; ?>select.php',
               data:{id : id},
