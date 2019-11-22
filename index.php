@@ -48,7 +48,7 @@
         class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target"
         id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">A.E.R</a>
+        <a class="navbar-brand" href="#"><img src="view/static/images/logo.png"></a>
         <!--<h6>Alliance Of Evangelicals Of Rwanda</h6>-->
         <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
                 type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -101,7 +101,7 @@
                             class="one-forth d-flex js-fullheight align-items-center ftco-animate"
                             data-scrollax=" properties: { translateY: '70%' }">
                         <div class="text">
-                            <span class="subheading">Welcome to A.E.R</span>
+                            <span class="subheading">Alliance of Evangelical of Rwanda</span>
                             <h1 class="mb-4 mt-3">
                                 <span>OUR VISION</span>
                             </h1>
@@ -134,7 +134,7 @@
                             class="one-forth d-flex js-fullheight align-items-center ftco-animate"
                             data-scrollax=" properties: { translateY: '70%' }">
                         <div class="text">
-                            <span class="subheading">Welcome to A.E.R</span>
+                            <span class="subheading">Alliance of Evangelical of Rwanda</span>
                             <h1 class="mb-4 mt-3">
                                 <span>OUR COREVALUES</span>
                             </h1>
@@ -213,7 +213,7 @@
 
                     <div class="tab-pane fade show active py-0" id="v-pills-1"
                          role="tabpanel" aria-labelledby="v-pills-1-tab">
-							<span class="icon mb-3 d-block"><i class="fa fa-book"
+			<span class="icon mb-3 d-block"><i class="fa fa-book"
                                                                aria-hidden="true"></i></span>
                         <h2 class="mb-4">CBSI Program</h2>
                         <p>Community bible study is program that provides in-depth Bible studies that take participants

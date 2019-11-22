@@ -5289,7 +5289,7 @@ button.bg-light:focus {
   background-color: #dae0e5 !important; }
 
 .bg-dark {
-  background-color: #343a40 !important; }
+  background-color: #a9cff5 !important; }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
@@ -8001,7 +8001,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
-  color: #999999; }
+  color: #000; }
   body.menu-show {
     overflow: hidden;
     position: fixed;
@@ -8407,7 +8407,7 @@ h1, h2, h3, h4, h5,
           color: #fff; }
           @media (min-width: 992px) {
             .owl-carousel.home-slider .slider-item .slider-text .subheading {
-              color: #fe9191; } }
+              color: #422e2e; } }
         .owl-carousel.home-slider .slider-item .slider-text .text {
           position: relative;
           z-index: 1; }
@@ -8891,10 +8891,10 @@ h1, h2, h3, h4, h5,
     box-shadow: 0px 7px 15px -5px rgba(0, 0, 0, 0.07); }
 
 .ftco-program .nav-link-wrap {
-  background: #fe9191; }
+  background: #423b3b; }
   @media (max-width: 767.98px) {
     .ftco-program .nav-link-wrap {
-      background: #fe9191;
+      background: #423b3b;
       margin-top: 20px; } }
 
 .ftco-program .nav-pills p {
@@ -8948,7 +8948,7 @@ h1, h2, h3, h4, h5,
 
 .ftco-program .tab-content .tab-pane .icon {
   font-size: 100px;
-  color: #fe7878;
+  color: #2e2828;
   line-height: 1.2; }
 
 .aside-stretch {
@@ -9153,7 +9153,7 @@ textarea.form-control {
   margin-bottom: 5px;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.3);
-  color: #fe9191;
+  color: #121111;
   letter-spacing: 2px; }
 
 .heading-section h2 {
